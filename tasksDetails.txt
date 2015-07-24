@@ -1,0 +1,21 @@
+1. Time - Date view
+2. Address View - 
+	5. edit/add address different view and save return to address 
+	   view
+3. Summary view - confirm and cancel button
+	1,2,3 - not in slide navigator
+4. confirmation popup with return to order page view or list of orders
+6. List of orders from slider,
+7. outside slider->Click on any order -> detail order summary if completed/ else with cancel button
+8. Contact us in slider
+9. About us.
+10. android back button exit popup
+11. in order completed a popup for feedback
+
+
+stores - dashboard, order, date and time, all address, add/edit address, order final, list of orders, feedback 
+
+
+Modification:- Add name in dashboard which will be editable and prepopulate with gmail display name
+
+custom login - end feature

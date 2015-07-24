@@ -1,0 +1,79 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/cupertino';
+@import 'sencha-touch/cupertino/all';
+
+// Custom code goes here..
+
+// Examples of using the icon mixin:
+// @include icon('user');
+
+//fonts files for Myriad Regular, semiBold, Bold
+
+@import url("../fonts/MyriadPro-Semibold.otf");
+@import url("../fonts/MyriadPro-Regular.otf");
+@import url("../fonts/MyriadPro-Bold.otf");
+@import url("../fonts/MyriadPro-Light.otf");
+@import url("../fonts/MyriadPro-It.otf");
+
+$font-family: "MyriadPro-Regular";
+@font-face {
+font-family: 'MyMaidRegular';
+src: url('../fonts/MyriadPro-Regular.otf') format('opentype')
+}
+@font-face {
+	font-family: 'MyMaidSemiBold';
+	src: url('../fonts/MyriadPro-Semibold.otf') format('opentype')
+}
+@font-face {
+	font-family: 'MyMaidBold';
+	src: url('../fonts/MyriadPro-Bold.otf') format('opentype')
+}
+@font-face {
+	font-family: 'MyMaidLight';
+	src: url('../fonts/MyriadPro-Light.otf') format('opentype')
+}
+@font-face {
+	font-family: 'MyMaidItalic';
+	src: url('../fonts/MyriadPro-It.otf') format('opentype')
+}
+
+html {
+  font-size: 100% !important;
+}
+
+body.x-desktop {
+  font-size: 100% !important;
+}
+
+
+// Your custom code goes here...
+@import 'components/header';
+@import 'components/timePicker';
+@import 'common/common';
+@import 'common/font';
+@import 'common/text';
+
+
+//phone with portrait
+@media only screen
+and (max-width : 760px) 
+and (orientation : portrait)
+{
+	@import 'views/phone/main';
+	@import 'views/phone/login';
+	@import 'views/phone/slider';
+	@import 'views/phone/dashboard';
+	@import 'views/phone/order';
+	@import 'views/phone/address';
+	@import 'views/phone/datetime';
+}
+
+//tablet with portrait
+@media only screen
+and (min-width : 768px)
+and (orientation : portrait){
+}
+
+

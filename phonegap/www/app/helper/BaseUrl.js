@@ -1,0 +1,1 @@
+Ext.define("TheOpenDoor.helper.BaseUrl",{singleton:true,alternateClassName:"BaseUrl",baseUrl:"http://servicediscovery-opendoors.rhcloud.com/"});

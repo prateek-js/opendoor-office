@@ -1,0 +1,30 @@
+.slide-navigator-toolbar{
+	background-color: #919191;
+	border: none;
+  	border-radius: 0 !important;
+  	height: 3rem !important;
+  	min-height: 3rem !important;
+  	.x-innerhtml{
+  		line-height: 3rem;
+  		text-align: center;
+  		font-size: 1rem;
+  		font-family: "MyMaidSemiBold";
+  	}
+}
+
+.home-slider-toolbar{
+  background-color: #919191;
+  border-radius: 0 !important;
+}
+.center-toolbar-image{
+    background-size: contain;
+    width: 4rem;
+    height: 4rem;
+    z-index: 1000;
+    top: 0;
+}
+.newUI-header-style{
+  .x-toolbar{
+    overflow: inherit;
+  }
+}

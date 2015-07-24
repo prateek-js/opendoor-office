@@ -1,0 +1,48 @@
+.date-view{
+	.date-time-container{
+		.date-time-label{
+			.x-innerhtml{
+				font-size: 1rem;
+				width: 80%;
+				margin: 5% 10%;
+				text-align: center;
+			}
+		}
+		.date-picker-container{
+			width: 80%;
+			margin: 5% 10%;
+			.order-date-label{
+				.x-innerhtml{
+					font-size: 1rem;
+					line-height: 42px;
+					margin-right: 1rem;
+				}
+			}
+			.datePickerTextFieldCls{
+
+			}
+		}
+		.time-picker-container{
+			width: 80%;
+			margin: 5% 10%;
+			.order-time-label{
+				.x-innerhtml{
+					font-size: 1rem;
+					line-height: 42px;
+					margin-right: 1rem;
+				}
+			}
+			.timePickerTextFieldCls{
+
+			}
+		}
+		.date-time-selected-label{
+			.x-innerhtml{
+				font-size: 1rem;
+				width: 80%;
+				margin: 5% 10%;
+				text-align: center;
+			}
+		}
+	}
+}

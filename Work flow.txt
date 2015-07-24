@@ -1,0 +1,12 @@
+1. google success to our create user webservice - helper, loginController, loginBO, login.json
+2. goto dashboard and populate google display name , email id, and take otheer details and hit to server and save logged in flag - dashboardBo, dashboardcontroller, dashboard.json
+3. on initialize or painted event call webservice for order page 
+
+
+
+//Feature enhancement
+1. facebook login
+2. share
+3. in app notification
+4. geolocation
+5. payment gateway

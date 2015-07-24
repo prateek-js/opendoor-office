@@ -1,0 +1,27 @@
+
+$login-text-font-height: 90%;
+$login-label-font-height: 90%;
+
+
+$font-header-title: 0.8rem;
+
+
+@mixin get-font($font-size, $font-color) {
+	font-size: $font-size;
+	color: $font-color;
+}
+@mixin bold-font {
+	font-weight: bold;
+}
+
+@mixin fieldfont(){
+	.x-form-fieldset-title {
+		text-shadow: none;
+		color: $color-white;
+		//margin-right: 0;
+		font-size:.9rem;
+		@include insert-horizontal-margin(0.3em,0);
+		margin-top: 0.5rem;
+	}
+	
+}

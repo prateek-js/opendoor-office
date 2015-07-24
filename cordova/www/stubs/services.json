@@ -1,0 +1,35 @@
+{
+		"service_id": 1,
+		"name": "Maid",
+		"image": "resources/images/download.jpeg",
+		"price_per_hour": 800
+
+	},
+	{
+			"service_id": 1,
+			"name": "Maid",
+			"image": "resources/images/download.jpeg",
+			"price_per_hour": 800
+
+	},
+	{
+			"service_id": 2,
+			"name": "Plumber",
+			"image": "resources/images/download.jpeg",
+			"price_per_hour": 800
+
+	},
+	{
+			"service_id": 3,
+			"name": "Electrician",
+			"image": "resources/images/download.jpeg",
+			"price_per_hour": 800
+
+	},
+	{
+			"service_id": 4,
+			"name": "Cook",
+			"image": "resources/images/download.jpeg",
+			"price_per_hour": 800
+
+	}

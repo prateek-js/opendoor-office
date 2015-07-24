@@ -1,0 +1,118 @@
+.timePickerCls{
+	width: 13.315rem !important;
+	height:10.5rem !important;
+	padding: 0 !important;
+		background-color: #475d8b !important;
+		background-image: none !important; 
+	.x-toolbar{
+		min-height: 2em !important;
+	}
+	.x-toolbar .x-button {
+		margin: 0 !important;
+	
+	}
+	.x-toolbar-dark{
+		background-image: none !important;
+		background-color: #475d8b !important;
+		border-color: transparent !important;
+	}
+	.x-toolbar-dark.x-docked-top {
+		border-bottom-color: transparent;
+	}
+	.x-toolbar.x-docked-top {
+		border-bottom: 0px;
+	}
+	.x-toolbar-dark .x-button{
+		background-color: transparent !important;
+		background-image: none !important;
+		border: none !important;
+		border-top-color: transparent !important;
+	}
+	.x-button-label{
+		color: white !important;
+		font-family: "Gill Sans";
+		font-size: 1rem;		
+	}
+	.x-picker-inner{
+			margin: 0  0.4rem 0.4rem 0.4rem !important;
+			.x-picker-bar{
+				border-top: 1px solid #e65a13;
+				border-bottom: 1px solid #e65a13;
+				background-color: rgba(230,90,19,0.3);
+				box-shadow: rgba(0,0,0,0.4) 0 5px 0.2em;
+				background-image: none;
+			}
+			.x-picker-item {
+				color: black;
+				font-family: "Gill Sans";
+				font-size: 1rem;
+			}
+	}
+	.x-anchor.x-anchor-top{
+		width: 0 !important;
+		height: 0 !important;
+		-webkit-mask: none !important;
+		-webkit-mask-size: 0 !important;
+	}
+	.x-picker-slot-title{
+		padding: 0.2em 0.2em;
+	}
+}
+
+.defaultPickerCls{
+	height:10.5em;
+	width:22.065rem;
+	padding: 0 !important;
+		background-color: #888888 !important;
+		background-image: none !important; 
+	.x-toolbar{
+		min-height: 2em !important;
+	}
+	.x-toolbar .x-button {
+		margin: 0 !important;
+	
+	}
+	.x-toolbar-dark{
+		background-image: none !important;
+		background-color: #888888 !important;
+		border-color: transparent !important;
+	}
+	.x-toolbar-dark.x-docked-top {
+		border-bottom-color: transparent;
+	}
+	.x-toolbar.x-docked-top {
+		border-bottom: 0px;
+	}
+	.x-toolbar-dark .x-button{
+		background-color: transparent !important;
+		background-image: none !important;
+		border: none !important;
+		border-top-color: transparent !important;
+	}
+	.x-button-label{
+		
+	}
+		.x-anchor.x-anchor-top{
+				width: 0 !important;
+				height: 0 !important;
+				-webkit-mask: none !important;
+				-webkit-mask-size: 0 !important;
+		}
+		.x-picker-inner{
+			margin: 0 0.4rem 0.4rem 0.4rem !important;
+			.x-picker-bar{
+				border-top: 1px solid #e65a13;
+				border-bottom: 1px solid #e65a13;
+				background-color: rgba(230,90,19,0.3);
+				box-shadow: rgba(0,0,0,0.4) 0 5px 0.2em;
+				background-image: none;
+			}
+			.x-picker-item {
+			
+				
+			}
+			.x-picker-slot .x-dataview-inner{
+		padding-top: 2.8em !important;
+	}
+	}
+}

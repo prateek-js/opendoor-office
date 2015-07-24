@@ -1,0 +1,30 @@
+.dashboard-view{
+	 margin-top: 1rem;
+	.dashboard-view-container{
+		width: 100%;
+		margin-top: 2rem;
+		margin-left: 1rem;
+		.other-textfield{
+			width: 75%;
+			margin-bottom: 1rem;
+			.x-field-input{
+  				border-radius: 0;
+  				border: none;
+			}
+			.x-input-el{
+				margin-bottom: 0.5rem;
+				border-left: 1px solid red !important;
+				border: none;
+			}
+		}
+		.profile-details-label{
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+	}
+	.save-button{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+	}
+}

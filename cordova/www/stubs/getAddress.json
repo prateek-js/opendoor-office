@@ -1,0 +1,69 @@
+{
+	"addresses":[{
+		"id": 29,
+		"line1": "180, somebuilding",
+		"line2": "someotherroad",
+		"landmark": "nearthat",
+		"city": "moholla",
+		"state": "rajya",
+		"country": "desh",
+		"pincode": 1299468,
+		"name":"naam",
+		"phone_number":"9898989898"
+	},{
+		"id": 30,
+		"line1": "180, somebuilding",
+		"line2": "someotherroad",
+		"landmark": "nearthat",
+		"city": "moholla",
+		"state": "rajya",
+		"country": "desh",
+		"pincode": 1299468,
+		"name":"naam",
+		"phone_number":"9898989898"
+	},{
+		"id": 31,
+		"line1": "180, somebuilding",
+		"line2": "someotherroad",
+		"landmark": "nearthat",
+		"city": "moholla",
+		"state": "rajya",
+		"country": "desh",
+		"pincode": 1299468,
+		"name":"naam",
+		"phone_number":"9898989898"
+	},{
+		"id": 32,
+		"line1": "180, somebuilding",
+		"line2": "someotherroad",
+		"landmark": "nearthat",
+		"city": "moholla",
+		"state": "rajya",
+		"country": "desh",
+		"pincode": 1299468,
+		"name":"naam",
+		"phone_number":"9898989898"
+	},{
+		"id": 33,
+		"line1": "180, somebuilding",
+		"line2": "someotherroad",
+		"landmark": "nearthat",
+		"city": "moholla",
+		"state": "rajya",
+		"country": "desh",
+		"pincode": 1299468,
+		"name":"naam",
+		"phone_number":"9898989898"
+	},{
+		"id": 34,
+		"line1": "180, somebuilding",
+		"line2": "someotherroad",
+		"landmark": "nearthat",
+		"city": "moholla",
+		"state": "rajya",
+		"country": "desh",
+		"pincode": 1299468,
+		"name":"naam",
+		"phone_number":"9898989898"
+	}]
+}
