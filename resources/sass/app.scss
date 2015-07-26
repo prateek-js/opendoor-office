@@ -9,34 +9,19 @@
 // Examples of using the icon mixin:
 // @include icon('user');
 
-//fonts files for Myriad Regular, semiBold, Bold
+//fonts files for Lato Regular, light
 
-@import url("../fonts/MyriadPro-Semibold.otf");
-@import url("../fonts/MyriadPro-Regular.otf");
-@import url("../fonts/MyriadPro-Bold.otf");
-@import url("../fonts/MyriadPro-Light.otf");
-@import url("../fonts/MyriadPro-It.otf");
+@import url("../fonts/Lato-Light.ttf");
+@import url("../fonts/Lato-Regular.ttf");
 
-$font-family: "MyriadPro-Regular";
+$font-family: "TheOpenDoorRegular";
 @font-face {
-font-family: 'MyMaidRegular';
-src: url('../fonts/MyriadPro-Regular.otf') format('opentype')
+	font-family: 'TheOpenDoorRegular';
+	src: url('../fonts/Lato-Regular.ttf') format('truetype')
 }
 @font-face {
-	font-family: 'MyMaidSemiBold';
-	src: url('../fonts/MyriadPro-Semibold.otf') format('opentype')
-}
-@font-face {
-	font-family: 'MyMaidBold';
-	src: url('../fonts/MyriadPro-Bold.otf') format('opentype')
-}
-@font-face {
-	font-family: 'MyMaidLight';
-	src: url('../fonts/MyriadPro-Light.otf') format('opentype')
-}
-@font-face {
-	font-family: 'MyMaidItalic';
-	src: url('../fonts/MyriadPro-It.otf') format('opentype')
+	font-family: 'TheOpenDoorLight';
+	src: url('../fonts/Lato-Light.ttf') format('truetype')
 }
 
 html {
@@ -49,11 +34,12 @@ body.x-desktop {
 
 
 // Your custom code goes here...
-@import 'components/header';
-@import 'components/timePicker';
+@import 'common/color';
+@import 'common/text';
 @import 'common/common';
 @import 'common/font';
-@import 'common/text';
+@import 'components/header';
+@import 'components/timePicker';
 
 
 //phone with portrait

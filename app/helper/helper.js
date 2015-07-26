@@ -22,7 +22,6 @@ var userProfile = '';
     * sucess handler from google 
 */
 function handleAuthResult(authResult) {
-    alert("handleAuthResult");
     this.userDetails(authResult);
     TheOpenDoor.app.getController('TheOpenDoor.controller.LoginController').handleSignInDataSend(authResult);
 }

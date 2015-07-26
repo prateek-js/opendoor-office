@@ -3,9 +3,12 @@
 }
 .center-logo-image{
 	background-size: contain;
-	width: 4rem;
-	height: 4rem;
+	//width: 4rem;
+	//height: 4rem;
 	position: absolute;
   	z-index: 2;
-  	margin: 0 40%;
+  	margin: 6px 40%;
+  	background-size: 80px 80px !important;
+    height: 5rem;
+    width: 5rem;
 }

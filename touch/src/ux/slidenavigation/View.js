@@ -703,7 +703,7 @@ Ext.define('Ext.ux.slidenavigation.View', {
             docked: listPosition,
             cls: 'x-slidenavigation-list',
             style: 'position: absolute; top: 0; '+listPosition+': 0; height: 100%;' +
-                   'z-index: 2',
+                   'z-index: 2; background-color: #3a3a3a',
             listeners: {
                 select: this.onSelect,
                 itemtap: this.onItemTap,

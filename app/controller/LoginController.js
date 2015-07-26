@@ -27,20 +27,20 @@ Ext.define('TheOpenDoor.controller.LoginController',{
     },
 
     init: function(application) {
-        window.fbAsyncInit = function() {
-            FB.init({
-              appId      : 991073507583251,
-              xfbml      : true,
-              version    : 'v2.3'
-            });
-        };
+        // window.fbAsyncInit = function() {
+        //     FB.init({
+        //       appId      : 991073507583251,
+        //       xfbml      : true,
+        //       version    : 'v2.3'
+        //     });
+        // };
 
-        (function(d, s, id){
-            var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-            js = d.createElement('script'); js.id = id; js.async = true;
-            js.src = "http://connect.facebook.net/en_US/all.js";
-            d.getElementsByTagName('head')[0].appendChild(js);
-        }(document));
+        // (function(d, s, id){
+        //     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        //     js = d.createElement('script'); js.id = id; js.async = true;
+        //     js.src = "http://connect.facebook.net/en_US/all.js";
+        //     d.getElementsByTagName('head')[0].appendChild(js);
+        // }(document));
 
 
     },
@@ -53,7 +53,6 @@ Ext.define('TheOpenDoor.controller.LoginController',{
         this.getLoginBO().doUserFbLogin(userFbEmail, successCb, failureCb);
     },
     handleSignInDataSend: function(authResult){
-        alert("handleSignInDataSend");
         showSpinner("Signing In...");
         var me = this,
         successCb = this.handleSignInSucess,
@@ -90,8 +89,18 @@ Ext.define('TheOpenDoor.controller.LoginController',{
     },
     handleFacebookSignIn: function(){
         showSpinner("Connecting to facebook...");
-        window.facebookConnectPlugin.login(["email","public_profile"], function(userData){this.userData = userData;},function (error) { alert("" + error) });
-        window.facebookConnectPlugin.api("/me?fields=id,email", ["user_birthday"],this.fbsuccess,function (error) {alert("Failed: " + error);});
+        window.facebookConnectPlugin.login(["email","public_profile"], 
+            function(response){
+                if (response.authResponse) {
+                    facebookConnectPlugin.api('/me', null,
+                    function(response) {
+                        alert('Good to see you, ' +response.email + response.name + '.');
+                    });
+                }
+            },
+            function (error) { alert("" + error) }
+        );
+        //window.facebookConnectPlugin.api("/me?fields=id,email", ["user_birthday"],this.fbsuccess,function (error) {alert("Failed: " + error);});
     },
     fbsuccess : function(result){
         userProfile = result;

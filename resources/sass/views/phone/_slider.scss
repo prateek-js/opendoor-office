@@ -1,12 +1,14 @@
 .slide-navigator-toolbar{
-	background-color: #919191;
+  .x-scroll-scroller{
+    background-color: $color-font2;
+  }
+	background-color: $color-font2;
 	border: none;
   	border-radius: 0 !important;
-  	height: 3rem !important;
-  	min-height: 3rem !important;
+  	height: 4rem !important;
+  	min-height: 4rem !important;
   	.x-innerhtml{
   		line-height: 3rem;
-  		text-align: center;
   		font-size: 1rem;
   		font-family: "MyMaidSemiBold";
   	}
@@ -27,4 +29,21 @@
   .x-toolbar{
     overflow: inherit;
   }
+}
+
+.slider-icon{
+    height: 50px;
+    margin-top: 5px;
+}
+.slider-cls{
+  .x-list .x-list-item.x-list-item-tpl:before{
+    border-bottom: none;
+  }
+}
+.user-logo-div{
+  float: left;
+}
+.user-label{
+  line-height: 4rem;
+
 }

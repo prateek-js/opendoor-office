@@ -15,7 +15,7 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
             width: '100%'
         },{
             xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
+            src: 'resources/images/logo.png',
             docked: 'top',
             itemId : 'centerLogo',
             cls: 'center-logo-image',
@@ -33,18 +33,18 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
                 itemId : 'googleBtnContainer',
                 cls: 'google-btn-container',
                 layout: {
-                    type: 'hbox',
+                    type: 'vbox',
                     align: 'center',
-                    pack: 'start'
+                    pack: 'center'
                 },
                 items: [{
+                    xtype: 'label',
+                    html: localeString.connectWith,
+                    cls: 'login-via-google-label',
+                },{
                     xtype: 'image',
                     src: 'resources/images/gplus.png',
                     cls: 'login-via-google-image'
-                },{
-                    xtype: 'label',
-                    html: 'Login with Google',
-                    cls: 'login-via-google-label',
                 }],
                 listeners: {
                     tap: {

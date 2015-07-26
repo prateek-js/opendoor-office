@@ -54,8 +54,17 @@ $adjustment-factor : 1;
 
 $font-data: (
 
-	//app related text fonts
+  //app related text fonts
 
+    //white
+    ('label-light-font2-32',TheOpenDoorLight,2rem,$color-font2),
+    ('label-light-white-32',TheOpenDoorLight,1.8rem,$color-font3),
+    ('label-light-font-32',TheOpenDoorLight,2rem,$color-font1),
+    ('label-regular-font-24',TheOpenDoorRegular,1.33rem,$color-font1),
+    ('label-light-font2-16',TheOpenDoorRegular,1rem,$color-font2),
+    ('label-light-font-32',TheOpenDoorLight,2rem,$color-font1),
+    ('label-light-font-32',TheOpenDoorLight,2rem,$color-font1)
+    
 );
 // Generate the CSS for a named font
 @mixin font-label($font-label) {
@@ -68,7 +77,7 @@ $font-data: (
     $label: nth($font, 1);  // in SASS, list indices begin at 1
     @if $font-label == $label {
       $found: true;
-      font-family: nth($font, 2),SSNetRegular;
+      font-family: nth($font, 2),TheOpenDoorLight;
       font-size: nth($font, 3)  !important;
       color: nth($font, 4)  !important;
         
@@ -94,7 +103,7 @@ $font-data: (
     white-space: pre-wrap;  // Consider tabs and spaces as important/intentional
     overflow: visible;      // Default, but important
     word-break: break-word;     // Default, but important
-  	text-overflow: ellipsis;
+    text-overflow: ellipsis;
   }
   @else if $lines == 'single' {
     // Single-line string.

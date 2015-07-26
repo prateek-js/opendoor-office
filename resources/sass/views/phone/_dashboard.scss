@@ -1,30 +1,40 @@
 .dashboard-view{
-	 margin-top: 1rem;
 	.dashboard-view-container{
-		width: 100%;
+		width: 90%;
 		margin-top: 2rem;
-		margin-left: 1rem;
 		.other-textfield{
-			width: 75%;
-			margin-bottom: 1rem;
+			width: 100%;
+			margin-bottom: 2rem;
+			border-bottom: 1px solid $color-border1 !important;
 			.x-field-input{
   				border-radius: 0;
   				border: none;
 			}
 			.x-input-el{
-				margin-bottom: 0.5rem;
-				border-left: 1px solid red !important;
+				border-left: 1.5px solid $color-font1 !important;
 				border: none;
+				margin-bottom: 0.2rem;
+				min-height: 2rem !important;
+				@include text('label-light-font2-16','single');
 			}
 		}
 		.profile-details-label{
 			margin-bottom: 1rem;
 			margin-top: 1rem;
+			@include text('label-regular-font-24','single');
+		}
+		.icon-field-container{
+			width: 100%;
 		}
 	}
 	.save-button{
 		border: 1px solid #cccccc;
 		border-radius: 0;
 		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
+		}
 	}
 }

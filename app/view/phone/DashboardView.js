@@ -14,7 +14,7 @@ Ext.define('TheOpenDoor.view.phone.DashboardView', {
             width: '100%'
         },{
             xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
+            src: 'resources/images/logo.png',
             docked: 'top',
             itemId : 'centerLogo',
             cls: 'center-logo-image',
@@ -72,8 +72,8 @@ Ext.define('TheOpenDoor.view.phone.DashboardView', {
                 },{
                     xtype: 'numberfield',
                     cls: 'other-textfield',
-                    readOnly: true,
                     name: 'ContactNumber',
+                    placeHolder: '9876543210',
                     itemId : 'mobileNumberField'
                 }]                
             }]

@@ -21,6 +21,7 @@ Ext.define('TheOpenDoor.localization.LocaleEnglish', {
 	error_generic_failure : "Failure",
 	error_generic_delete : "Delete",
 	error_generic_retry : "Retry",
+	connectWith: "Connect with",
 
 	//web services success strings
 	profileSaveSuccess: "Profile Updated",

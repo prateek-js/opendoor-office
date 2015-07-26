@@ -73,7 +73,16 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
     },
 
     onLoginFailure: function(responseObj, opts){
-    	var decodedObj = (responseObj.statusText);
+    	var decodedObj = (responseObj.status);
+        if(decodedObj == 302){
+            var createUserStore = Ext.getStore('CreateUserStore');
+            var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
+            if (Ext.isObject(decodedObj)) {
+                createUserStore.addToStore(decodedObj);
+                TheOpenDoor.app.getController('LoginController').handleSignInSucess();
+            }
+            return;
+        }
         errorHandled = this.genericErrorCheck(responseObj, false);
         if(!errorHandled){
             var errorText = "Error";

@@ -30,7 +30,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   docked: 'top',
 	        			   ui: 'plain',  
 	        			   cls: 'slide-navigator-toolbar',
-	        			   html: 'MyMaid'
+	        			   html: '<div><div class="user-logo-div"><img src="resources/images/user.png" class="slider-icon"></div><div cls="user-label">Tejas shah</div></div>'
 	        		   }]
 
 	        	   },
@@ -46,7 +46,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        	   
 	        	   me.slideNavigatorItemArray = [{
 	        		   
-	        		   title : 'Order Page',
+	        		   title : '<div class="list-items"><img style="float: left;margin-top: -7px;" src="resources/images/slider/all-orders.svg" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp;&All Orders</span></div>',
 	        		   titlename : 'OrderPage',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
