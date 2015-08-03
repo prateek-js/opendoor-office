@@ -23,16 +23,16 @@ Ext.define('TheOpenDoor.view.phone.Main', {
             },
             items: [{
                 xtype: 'image',
-                src : "resources/images/images.jpeg"
+                src : "resources/images/carousel/how-it-works.jpg",
+                cls: 'carousel-images'
             },{
                 xtype: 'image',
-                src : "resources/images/download.jpeg"
+                src : "resources/images/carousel/on-demand.jpg",
+                cls: 'carousel-images'
             },{
                 xtype: 'image',
-                src : "resources/images/images.jpeg"
-            },{
-                xtype: 'image',
-                src : "resources/images/download.jpeg"
+                src : "resources/images/carousel/that's-it.jpg",
+                cls: 'carousel-images'
             }]
         }]
     }

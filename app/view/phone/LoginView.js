@@ -11,7 +11,7 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
         cls: 'login-view',
         items:[{
             xtype: 'headerPanel',
-            flex: 1,
+            //flex: 1,
             width: '100%'
         },{
             xtype: 'image',
@@ -43,7 +43,7 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
                     cls: 'login-via-google-label',
                 },{
                     xtype: 'image',
-                    src: 'resources/images/gplus.png',
+                    src: 'resources/images/g.png',
                     cls: 'login-via-google-image'
                 }],
                 listeners: {

@@ -10,7 +10,7 @@ Ext.define("TheOpenDoor.view.component.DatePickerField", {
 				element:'element',
 				tap:function(me, e, eOpts){
 					if(me.getTarget().id == "datePickerId"){
-					 this.getPicker().showBy(this,'tr-br?');
+					 this.getPicker().showBy(this,'tl-bl?');
 					}
 					
 				}
@@ -36,6 +36,8 @@ Ext.define("TheOpenDoor.view.component.DatePickerField", {
 			hideOnMaskTap:true,
 			showAnimation:'',
 			hideAnimation:'',
+			doneButton: false,
+			cancelButton: false,
 			id:'datePickerCreate',
     		slots : [{
 	             name:'date',
@@ -43,7 +45,7 @@ Ext.define("TheOpenDoor.view.component.DatePickerField", {
 	             displayField: 'date',
 	             valueField:'date',
 	             align:'center',
-	             title: 'Date'
+	             title: ' '
     		}],
 
             listeners: {
@@ -52,7 +54,7 @@ Ext.define("TheOpenDoor.view.component.DatePickerField", {
 					var value=datePicker.getValue();
 					this.setValue(value);
 				},
-                change: function (picker, values) {
+                pick: function (picker, values) {
 					datePicker.setValue(values.date);
 					var store=Ext.getStore('GetSlotsStore');
 					var index=store.find('date',values.date);

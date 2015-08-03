@@ -45,7 +45,7 @@ Ext.define('TheOpenDoor.businessObject.GetAddressBO', {
             if (Ext.isObject(decodedObj)&& decodedObj.addresses != null) {
                 addressGetStore.removeAll();
                 addressGetStore.addToStore(decodedObj.addresses);
-                 TheOpenDoor.app.getController('OrderStartController').handleGetAddressSucess();
+                TheOpenDoor.app.getController('OrderStartController').handleGetAddressSucess();
                 hideSpinner(); 	
     	    }
     	}catch(e){

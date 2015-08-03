@@ -41,7 +41,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/profile/profile.png',
                     cls: 'name-icon'
                 },{
                     xtype: 'textfield',
@@ -55,12 +55,12 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/profile/call.png',
                     cls: 'call-icon'
                 },{
                     xtype: 'numberfield',
                     itemId: 'mobileNumberField',
-                    placeHolder: '9876543210',
+                    placeHolder: localeString.phoneNumber,
                     cls: 'name-textfield'
                 }]                
             },{
@@ -69,7 +69,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/address/address.png',
                     cls: 'address-icon'
                 },{
                     xtype: 'textfield',

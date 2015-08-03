@@ -32,11 +32,11 @@ Ext.define('TheOpenDoor.view.phone.order.AddressItem',{
                 cls: 'delete-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/address/delete.png',
                     cls: 'address-delete-icon'
                 },{
                     xtype: 'label',
-                    html: localeString.delete,
+                    html: localeString.del,
                     cls: 'address-delete-label'
                 }],
                 listeners:[{
@@ -56,7 +56,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddressItem',{
                 cls: 'edit-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/address/edit.png',
                     cls: 'address-edit-icon'
                 },{
                     xtype: 'label',

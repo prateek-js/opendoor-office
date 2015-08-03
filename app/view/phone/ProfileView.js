@@ -38,7 +38,7 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/profile/profile.png',
                     cls: 'name-icon'
                 },{
                     xtype: 'textfield',
@@ -52,7 +52,7 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/profile/email.png',
                     cls: 'email-icon'
                 },{
                     xtype: 'emailfield',
@@ -67,7 +67,7 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: 'resources/images/slider/all-orders.png',
+                    src: 'resources/images/profile/call.png',
                     cls: 'number-icon'
                 },{
                     xtype: 'numberfield',

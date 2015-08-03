@@ -12,7 +12,7 @@ var userName = '';
 var userEmail = '';
 var userGender = '';
 var isloggedIn = '';
-var user_Id = '5';
+var user_Id = '6';
 var serviceIdSelected = '';
 var orderStartTime = '';
 var userProfile = '';
@@ -173,6 +173,26 @@ function onNativeBackKeyDown(e) {
  */
 function convertDateToTimestamp(date){
      //if (date === "")
+     var conDate = date.slice(0,10);
+     if(!date)
+     {
+        return null;
+     }
+    var dateItems = conDate.split('-');
+    var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var month = months[dateItems[1]-1];
+    var dateRet = dateItems[2]+' '+month;
+    return dateRet;
+}
+
+
+/**
+ * convert datestring to find day name
+ * @param date
+ * @returns {day in name format}
+ */
+function convertDateforDay(date){
+     //if (date === "")
      if(!date)
      {
         return null;
@@ -180,8 +200,38 @@ function convertDateToTimestamp(date){
     var dateItems = date.split('-');
     var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     var month = months[dateItems[1]-1];
-    var dateRet = dateItems[2]+' '+month+', '+dateItems[0];
-    return dateRet;
+    var dateRet = dateItems[2]+' '+month+' '+dateItems[0];
+    var d = new Date(dateRet);
+    var weekday = new Array(7);
+        weekday[0]=  "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+    var dayName = weekday[d.getDay()];
+    return dayName;
+}
+
+/**
+ * convert datestring to month digit , date and year
+ * @param date
+ * @returns {date in month digit format}
+ */
+function convertDateToCalendarDate(date){
+     //if (date === "")
+     if(!date)
+     {
+        return null;
+     }
+    var dateItems = date.split('-');
+    var months=["01","02","03","04","05","06","07","08","09","10","11","12"];
+    var month = months[dateItems[1]-1];
+    var dateRet = dateItems[2]+'/'+month+'/'+dateItems[0];
+    var dayName = convertDateforDay(date);
+    var displayDate = dateRet+','+dayName;
+    return displayDate;
 }
 
 /**
@@ -194,13 +244,12 @@ function convertTimeToTimestamp(time){
     if(!time){
        return '';
     }
-    time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-    if (time.length > 1) { // If time format correct
-        time = time.slice (1);  // Remove full string match value
-        time[5] = +time[0] < 12 ? 'am' : 'pm'; // Set AM/PM
-        time[0] = +time[0] % 12 || 12; // Adjust hours
-    }
-    return time.join (''); // return adjusted time or original string
+    var timeString = time;
+    var H = +timeString.substr(0, 2);
+    var h = (H % 12) || 12;
+    var ampm = H < 12 ? "AM" : "PM";
+    timeString = h + timeString.substr(2, 3) + ampm;
+    return timeString;
 }
 
 /**
@@ -229,7 +278,7 @@ function getLangParamFromURL(){
 function splitDateAndTimeRetTime(dateTime){
     var inp = dateTime
     var contime = convertTimeToTimestamp(inp.slice(11,19));
-    return conTime;
+    return contime;
 }
 
 /**
@@ -238,7 +287,9 @@ function splitDateAndTimeRetTime(dateTime){
 */
 function splitDateAndTimeRetDate(dateTime){
     var inp = dateTime;
-    var conDate = convertDateToTimestamp(inp.slice(0,9));
+    var conDate = convertDateToCalendarDate(inp.slice(0,10));
+    //var conDate = convertDateToTimestamp(inp.slice(0,9));
+    //var conDate = convertDateToTimestampTest(inp.slice(0,10));
     return conDate;
 }
 

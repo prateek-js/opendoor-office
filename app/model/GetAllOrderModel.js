@@ -10,25 +10,23 @@ Ext.define('TheOpenDoor.model.GetAllOrderModel', {
 		    {name : 'order_id', type: 'string'},
 		    {name : 'slot_start_time',type: 'string'},
 		    {name : 'status', type: 'string'},
-		    {name : 'service_name', type: 'string'}
-			// {
-			// 	name: 'orderTime',
-			// 	type: 'string',
-			// 	convert: function(value, record){
-			// 		debugger;
-			// 		val = splitDateAndTimeRetTime(record.get('slot_start_time'));
-			// 		return val;
-			// 	}
-			// },
-			// {
-			// 	name: 'orderDate',
-			// 	type: 'string',
-			// 	convert: function(value, record){
-			// 		debugger;
-			// 		val = splitDateAndTimeRetDate(record.get('slot_start_time'));
-			// 		return val;
-			// 	}
-			// }
+		    {name : 'service_name', type: 'string'},
+			{
+				name: 'orderTime',
+				type: 'string',
+				convert: function(value, record){
+					val = splitDateAndTimeRetTime(record.get('slot_start_time'));
+					return val;
+				}
+			},
+			{
+				name: 'orderDate',
+				type: 'string',
+				convert: function(value, record){
+					val = splitDateAndTimeRetDate(record.get('slot_start_time'));
+					return val;
+				}
+			}
 	   	]
    	}
 });

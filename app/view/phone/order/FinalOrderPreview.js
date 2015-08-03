@@ -25,26 +25,52 @@ Ext.define('TheOpenDoor.view.phone.order.FinalOrderPreview', {
             cls: 'final-order-container',
             items:[{
                 xtype: 'label',
+                cls: 'user-name-label',
+                itemId: 'userNameLabel',
+                html : 'Dear ' +localStorage.getItem('userName')
+            },{
+                xtype: 'label',
                 cls: 'selected-service-label',
                 itemId: 'selectedServiceLabel',
-                html : ''
+                html : localeString.yourRequest+ '' +localeString.requestCreated
             },{
                 xtype: 'label',
-                cls: 'selected-time-label',
-                itemId: 'selectedTimeLabel',
-                html: ''
+                cls: 'maid-reach-label',
+                itemId: 'maidReachLabel',
+                html : localeString.maidReach
             },{
                 xtype: 'label',
-                cls: 'selected-address-label',
+                cls: 'address-label',
                 html: '',
-                itemId: 'selectedAddressLabel'
+                itemId: 'addressLineLabel'
             },{
-                xtype: 'button',
-                ui: 'plain',
-                text: 'Place the Order',
-                itemId: 'placeOrderButton',
-                cls: 'place-order-button'
+                xtype: 'label',
+                cls: 'landmark-label',
+                html: '',
+                itemId: 'landmarkCityLabel'
+            },{
+                xtype: 'label',
+                cls: 'pincode-label',
+                html: '',
+                itemId: 'pincodeLabel'
+            },{
+                xtype: 'label',
+                cls: 'mobile-label',
+                html: '',
+                itemId: 'mobileLabel'
+            },{
+                xtype: 'label',
+                cls: 'time-label',
+                html: '',
+                itemId: 'timeLabel'
             }]                        
+        },{
+            xtype: 'button',
+            ui: 'plain',
+            docked: 'bottom',
+            text: localeString.submit,
+            itemId: 'placeOrderButton',
+            cls: 'place-order-button'
         }]
     }
 });

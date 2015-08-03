@@ -32,7 +32,13 @@ Ext.define('TheOpenDoor.localization.LocaleEnglish', {
 	saveAddress: 'Save Address',
 	addresses: 'Addresses',
 	addNewAddress: 'add new address',
-	delete: 'delete',
-	edit: 'edit'
+	del: 'delete',
+	edit: 'edit',
+	dateTimeslots: 'Please select date and time from the available slots',
+	phoneNumber: 'Eg:- 9876543210',
+	yourRequest: 'Your request for ',
+	requestCreated: ' service has been created.',
+	submit: 'Submit',
+	maidReach: 'Your maid will reach your address:'
 
 });

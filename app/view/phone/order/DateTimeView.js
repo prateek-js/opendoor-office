@@ -32,7 +32,7 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
             cls: 'date-time-container',           
             items: [{
                 xtype: 'label',
-                html : 'Please select date and time from the available slots',
+                html : localeString.dateTimeslots,
                 cls : 'date-time-label'
             },{
                 xtype: 'container',
@@ -42,7 +42,7 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
                 cls: 'date-picker-container',
                 items:[{
                     xtype : 'image',
-                    src : 'resources/images/slider/all-orders.png',
+                    src : 'resources/images/datetime/date.png',
                     cls : 'order-date-label'
                 },{
                    xtype:'DatePickerField',
@@ -62,7 +62,7 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
                 hidden :true,
                 items:[{
                     xtype : 'image',
-                    src : 'resources/images/slider/all-orders.png',
+                    src : 'resources/images/datetime/time.png',
                     cls : 'order-time-label'
                 },{
                     xtype:'TimePickerField',

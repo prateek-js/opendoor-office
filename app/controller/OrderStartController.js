@@ -80,7 +80,8 @@ Ext.define('TheOpenDoor.controller.OrderStartController',{
         
     },
     handleGetAddressSucess: function(){
-        this.getBaseNavigationView().pushtoNavigationView('AddressOrderService');
+        this.getBaseNavigationView().pushtoNavigationView('AddressOrderService');     
+        TheOpenDoor.app.getController('AddEditAddressController').handleAddressOrderServiceInit();
         hideSpinner();
     },
     handleGetAddressFailure: function(){

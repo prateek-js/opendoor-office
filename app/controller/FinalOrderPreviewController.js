@@ -12,9 +12,12 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 			slideNavigator: 'SlideNavigator',
 			finalOrderBackButton: 'FinalOrderPreview [itemId=headerPanel] [itemId=leftImage]',
 			selectedServiceLabel: 'FinalOrderPreview [itemId=selectedServiceLabel]',
-			selectedTimeLabel: 'FinalOrderPreview [itemId=selectedTimeLabel]',
-			selectedAddressLabel: 'FinalOrderPreview [itemId=selectedAddressLabel]',
-			placeOrderButton : 'FinalOrderPreview [itemId=placeOrderButton]'
+			placeOrderButton : 'FinalOrderPreview [itemId=placeOrderButton]',
+			addressLineLabel: 'FinalOrderPreview [itemId=addressLineLabel]',
+			landmarkCityLabel: 'FinalOrderPreview [itemId=landmarkCityLabel]',
+			pincodeLabel: 'FinalOrderPreview [itemId=pincodeLabel]',
+			mobileLabel: 'FinalOrderPreview [itemId=mobileLabel]',
+			timeLabel: 'FinalOrderPreview [itemId=timeLabel]'
 		},
 
 		control:{
@@ -37,14 +40,26 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 		var serviceSelected = serviceIdSelected;
 		var addressSelected = TheOpenDoor.app.getController('TheOpenDoor.controller.AddEditAddressController').addressIdSelected;
 		var timeSlotSelected = orderStartTime;
+		
 		var recordAddress = Ext.getStore('AddressGetStore').findRecord('id',addressSelected);
 		var recordService = Ext.getStore('OrderServiceStore').findRecord('service_id',serviceSelected);
-		var recordServiceText = "You requested for <b>" +recordService.data.name+ "</b> service"
-		var recordAddressText = '<div><b>' +recordAddress.data.name+ '</b></div><div>' +recordAddress.data.address_line+ '</div><div>' +recordAddress.data.address_cps+ '</div><div><b>' +recordAddress.data.phone_number+ '</b></div>';
+		var addressLine = recordAddress.data.line1 +' '+ recordAddress.data.line2;
+		var landmarkCity = recordAddress.data.landmark +' '+ recordAddress.data.city;
+		var pincode = recordAddress.data.pincode;
+		var mobNum = recordAddress.data.phone_number;
+		var timeinFormat = splitDateAndTimeRetTime(orderStartTime);
+		var dateinFormat = convertDateToTimestamp(orderStartTime);
+		var dayName = convertDateforDay(orderStartTime);
+		var recordServiceText = localeString.yourRequest +recordService.data.name+ localeString.requestCreated;
 		var timeSlotText = "Your Requested Slot at <b>" +timeSlotSelected;
+		var timeSelected = '<span class="order-time-label">Order Time: </span>'+ timeinFormat+ ' on ' +dayName+ ', ' +dateinFormat;
 		this.getSelectedServiceLabel().setHtml(recordServiceText);
-		this.getSelectedAddressLabel().setHtml(recordAddressText);
-		this.getSelectedTimeLabel().setHtml(timeSlotText);
+		//this.getSelectedTimeLabel().setHtml(timeSlotText);
+		this.getAddressLineLabel().setHtml(addressLine);
+		this.getLandmarkCityLabel().setHtml(landmarkCity);
+		this.getPincodeLabel().setHtml(pincode);
+		this.getMobileLabel().setHtml(mobNum);
+		this.getTimeLabel().setHtml(timeSelected);
 		var finalOrder = {};
 		finalOrder.service_id = serviceSelected;
 		finalOrder.address_id = addressSelected;
@@ -102,6 +117,8 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 
 	confirmOrder: function(buttonId,value,opt){
 		var myNavView = this.getMyNavView();
+		Ext.getCmp('datePickerCreate').destroy();
+        Ext.getCmp('timePickerCreate').destroy();
     	if(myNavView){
             Ext.Viewport.remove(myNavView, true);
         }

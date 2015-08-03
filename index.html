@@ -67,7 +67,9 @@
             if(typeof screen != 'undefined'){
                 screen.lockOrientation('portrait');
             }
-              
+            setTimeout(function() {
+                navigator.splashscreen.hide();
+            }, 2000); 
         }, false);           
     </script>
 </body>

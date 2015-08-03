@@ -36,6 +36,8 @@ Ext.define("TheOpenDoor.view.component.TimePickerField", {
 			hideOnMaskTap:true,
 			showAnimation:'',
 			hideAnimation:'',
+			doneButton: false,
+			cancelButton: false,
 			id:'timePickerCreate',
     		slots : [{
 	             name:'time',
@@ -43,7 +45,7 @@ Ext.define("TheOpenDoor.view.component.TimePickerField", {
 	             displayField: 'start_time',
 	             valueField:'start_time',
 	             align:'center',
-	             title: 'Time'
+	             title: ' '
     		}],
 
             listeners: {
@@ -54,7 +56,7 @@ Ext.define("TheOpenDoor.view.component.TimePickerField", {
 					var value=timePicker.getValue();
 					this.setValue(value);
 				},
-                change: function (picker, values) {
+                pick: function (picker, values) {
 					timePicker.setValue(values.time);
 					picker.hide();
 					//Ext.Viewport.remove(picker);

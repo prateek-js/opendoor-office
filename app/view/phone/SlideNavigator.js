@@ -76,7 +76,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        	   // },
 	        	   {
 	        		   
-	        		   title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Book Order</span></div>',
+	        		   title : '<div class="list-items"><img style="float: left;margin-left: 0.55rem;height: 42px; width: 32px" src="resources/images/slider/book-now.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Book Order</span></div>',
 	        		   titlename : 'OrderPage',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
@@ -91,14 +91,14 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   maskOnOpen: true
 	        		   }]
 	        	   },{
-	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp All Orders</span></div>',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp All Orders</span></div>',
 	        		   titlename : 'All Orders',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
+	        			   title: '<image src="resources/images/logo.png" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{
@@ -107,7 +107,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   }]
 	        	   },
 	        	   {
-	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/info.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp About Us</span></div>',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/info.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp About Us</span></div>',
 	        		   titlename : 'About Us',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
@@ -118,11 +118,11 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{
-	        			   xtype: 'ProfileView',
-	        			   maskOnOpen: true
+	        			   // xtype: 'ProfileView',
+	        			   // maskOnOpen: true
 	        		   }]
 	        	   },{
-	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/call.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Contact Us</span></div>',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/call.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Contact Us</span></div>',
 	        		   titlename : 'Contact Us',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
@@ -133,13 +133,14 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{
-	        			   xtype: 'ProfileView',
-	        			   maskOnOpen: true
+	        			   // xtype: 'ProfileView',
+	        			   // maskOnOpen: true
 	        		   }]
 	        	   },{
-	        		   title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/logout.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Log Out</span></div>',
+	        		   title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/logout.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Log Out</span></div>',
 	        		   titlename : 'logout',
 	        		   slideButton: true,
+	        		   cls: 'logout-msgbox',
 	        		   handler: function() {
 	        			   var me = this;
 	        			   Ext.Msg.confirm('', 'Are you sure you want to logout?',  function(btn,text)
