@@ -5,8 +5,11 @@ Ext.define('TheOpenDoor.view.phone.order.AddressView', {
     	itemId: 'addressView',
     	defaultType: 'AddressItem',
         store: 'AddressGetStore',
-        scrollable    : true,
+        scrollable: null,
         useComponents : true,
+        inline: {
+            wrap: true
+        },
     }
     // config: {
     //     layout : {

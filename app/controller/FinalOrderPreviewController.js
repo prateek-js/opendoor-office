@@ -10,7 +10,7 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 			baseNavigationView: 'BaseNavigationView',
 			myNavView: 'MyNavView',
 			slideNavigator: 'SlideNavigator',
-			finalOrderBackButton: 'FinalOrderPreview [itemId=headerPanel] button[itemId=backButtonId]',
+			finalOrderBackButton: 'FinalOrderPreview [itemId=headerPanel] [itemId=leftImage]',
 			selectedServiceLabel: 'FinalOrderPreview [itemId=selectedServiceLabel]',
 			selectedTimeLabel: 'FinalOrderPreview [itemId=selectedTimeLabel]',
 			selectedAddressLabel: 'FinalOrderPreview [itemId=selectedAddressLabel]',

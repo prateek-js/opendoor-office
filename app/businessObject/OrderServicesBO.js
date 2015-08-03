@@ -45,8 +45,7 @@ Ext.define('TheOpenDoor.businessObject.OrderServicesBO', {
             orderServiceStore.removeAll();
         	var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
             if (decodedObj) {
-            	orderServiceStore.addToStore(decodedObj);
-                    	
+            	orderServiceStore.addToStore(decodedObj);                    	
     	    }
     	}catch(e){
 			var errorText = localeString.errorMsg_defaultFailure;

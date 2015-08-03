@@ -30,7 +30,17 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   docked: 'top',
 	        			   ui: 'plain',  
 	        			   cls: 'slide-navigator-toolbar',
-	        			   html: '<div><div class="user-logo-div"><img src="resources/images/user.png" class="slider-icon"></div><div cls="user-label">Tejas shah</div></div>'
+	        			   tpl: '<div><div class="user-logo-div"><img src="resources/images/user.png" class="slider-icon"></div><div class="user-label" style="line-height: 4rem; color: white; font-family: TheOpenDoorLight; display: inline">{userName}</div><div style="float: right;line-height: 4.5rem;margin-right: 0.5rem;"><img src="resources/images/icons/next.png" class="arrow-slider-image"></div></div>',
+	        			   listeners:{
+	        			   		tap: {
+			                        element: 'element',
+			                        fn: function() {
+			                            Ext.Viewport.remove('SlideNavigator',true);
+                        				Ext.Viewport.setActiveItem('ProfileView',true);
+
+			                        }
+			                    }
+	        			   }   		   	
 	        		   }]
 
 	        	   },
@@ -44,16 +54,36 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        	   
 	        	   var me = this;
 	        	   
-	        	   me.slideNavigatorItemArray = [{
+	        	   me.slideNavigatorItemArray = [
+	        	   // {
 	        		   
-	        		   title : '<div class="list-items"><img style="float: left;margin-top: -7px;" src="resources/images/slider/all-orders.svg" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp;&All Orders</span></div>',
+	        		  //  //title : '<div><div class="user-logo-div"><img src="resources/images/user.png" class="slider-icon"></div><div class="user-label" id="profileNameLabel" style="line-height: 4rem; color: white; font-family: TheOpenDoorLight; display: inline">'+{userName}+'</div><div style="float: right;line-height: 4.5rem;margin-right: 0.5rem;"><img src="resources/images/icons/next.png" class="arrow-slider-image"></div></div>',
+	        		  //  title: "",
+	        		  //  titlename : 'ProfilePage',
+	        		  //  slideButton: true,
+	        		  //  cls: 'newUI-header-style',
+	        		  //  id: 'slideNavigatorItemArrayFirst',
+	        		  //  items: [{
+	        			 //   xtype: 'toolbar',
+	        			 //   docked: 'top',
+	        			 //   title: '<image src="resources/images/logo.png" class="center-toolbar-image">',
+	        			 //   cls: 'home-slider-toolbar',
+	        			 //   ui:'null'
+	        		  //  	},{
+	        			 //   xtype: 'ProfileView',
+	        			 //   maskOnOpen: true
+	        		  //  }]
+	        	   // },
+	        	   {
+	        		   
+	        		   title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Book Order</span></div>',
 	        		   titlename : 'OrderPage',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
+	        			   title: '<image src="resources/images/logo.png" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   	},{
@@ -61,7 +91,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   maskOnOpen: true
 	        		   }]
 	        	   },{
-	        	   		title : 'All Orders',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp All Orders</span></div>',
 	        		   titlename : 'All Orders',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
@@ -75,9 +105,10 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   xtype: 'AllOrderView',
 	        			   maskOnOpen: true
 	        		   }]
-	        	   },{
-	        	   		title : 'Your Profile',
-	        		   titlename : 'Your Profile',
+	        	   },
+	        	   {
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/info.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp About Us</span></div>',
+	        		   titlename : 'About Us',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
 	        		   items: [{
@@ -91,7 +122,22 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   maskOnOpen: true
 	        		   }]
 	        	   },{
-	        		   title : 'LOG OUT',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/call.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Contact Us</span></div>',
+	        		   titlename : 'Contact Us',
+	        		   slideButton: true,
+	        		   cls: 'newUI-header-style',
+	        		   items: [{
+	        			   xtype: 'toolbar',
+	        			   docked: 'top',
+	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
+	        			   cls: 'home-slider-toolbar',
+	        			   ui:'null'
+	        		   },{
+	        			   xtype: 'ProfileView',
+	        			   maskOnOpen: true
+	        		   }]
+	        	   },{
+	        		   title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;" src="resources/images/slider/logout.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Log Out</span></div>',
 	        		   titlename : 'logout',
 	        		   slideButton: true,
 	        		   handler: function() {
@@ -106,11 +152,13 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        				   }
 	        				}, this);	        			   
 	        		   }
-	        	   }];
-	    
-	        	   
+	        	   }];	        	   
 	        	   me.addItems(me.slideNavigatorItemArray);
 	        	   
 	        	   me.callParent();
+	        	   me.down('#sliderToolbar').setData({
+	        		   userName: localStorage.getItem('userName')
+	        	   });
+	        	   
 	           }
 });

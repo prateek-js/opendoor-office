@@ -4,18 +4,20 @@
 		margin-top: 2rem;
 		.other-textfield{
 			width: 100%;
-			margin-bottom: 2rem;
-			border-bottom: 1px solid $color-border1 !important;
 			.x-field-input{
   				border-radius: 0;
   				border: none;
+  				width: 90%;
+			}
+			.x-field-clearable .x-field-input{
+				padding-right: 0;
 			}
 			.x-input-el{
 				border-left: 1.5px solid $color-font1 !important;
 				border: none;
 				margin-bottom: 0.2rem;
 				min-height: 2rem !important;
-				@include text('label-light-font2-16','single');
+				@include text('label-regular-font2-16','single');
 			}
 		}
 		.profile-details-label{
@@ -25,6 +27,23 @@
 		}
 		.icon-field-container{
 			width: 100%;
+			margin-bottom: 2rem;
+			border-bottom: 1px solid $color-border1 !important;
+			.name-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
+			}
+			.email-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
+			}
+			.number-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
+			}
 		}
 	}
 	.save-button{

@@ -9,7 +9,7 @@ Ext.define("TheOpenDoor.view.component.DatePickerField", {
 			listeners:{
 				element:'element',
 				tap:function(me, e, eOpts){
-					if(this.getAllowTap()){
+					if(me.getTarget().id == "datePickerId"){
 					 this.getPicker().showBy(this,'tr-br?');
 					}
 					
@@ -60,7 +60,8 @@ Ext.define("TheOpenDoor.view.component.DatePickerField", {
 					var timeArray=data.getData().start_times;
 					var timeStore=Ext.getStore('TimeStore');
 					timeStore.addToStore(timeArray);
-					Ext.Viewport.remove(picker);
+					picker.hide();
+					//Ext.Viewport.remove(picker);
                 }
             }
         });

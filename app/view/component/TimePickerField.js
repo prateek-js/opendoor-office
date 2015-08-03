@@ -9,7 +9,7 @@ Ext.define("TheOpenDoor.view.component.TimePickerField", {
 			listeners:{
 				element:'element',
 				tap:function(me, e, eOpts){
-					if(this.getAllowTap()){
+					if(me.getTarget().id == "timePickerId"){
 					 this.getPicker().showBy(this,'tr-br?');
 					}
 					
@@ -56,7 +56,8 @@ Ext.define("TheOpenDoor.view.component.TimePickerField", {
 				},
                 change: function (picker, values) {
 					timePicker.setValue(values.time);
-					Ext.Viewport.remove(picker);
+					picker.hide();
+					//Ext.Viewport.remove(picker);
                 }
             }
         });

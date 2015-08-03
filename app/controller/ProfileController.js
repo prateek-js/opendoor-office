@@ -11,7 +11,8 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
             mobileNumberProfileField : 'ProfileView [itemId =mobileNumberProfileField]',
             saveProfileButton: 'ProfileView button[itemId = saveProfileButton]',
             emailProfileField: 'ProfileView [itemId = emailProfileFieldId]',
-            nameProfileField: 'ProfileView [itemId = nameProfileField]'
+            nameProfileField: 'ProfileView [itemId = nameProfileField]',
+            profileHeaderPanel: 'ProfileView [itemId=headerPanel] [itemId=leftImage]'
         },
 
         control:{
@@ -20,6 +21,9 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
             },
             saveProfileButton:{
                 tap: 'handleSaveProfileButtonTap'
+            },
+            profileHeaderPanel: {
+                tap: 'handleProfileHeaderBackTap'
             }
         },
 	},
@@ -48,7 +52,10 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
         var profileData = {};
         profileData.phone_number = this.getMobileNumberProfileField().getValue();
         profileData.name = this.getNameProfileField().getValue();
-        profileData.email = this.getEmailProfileField().getValue();   
+        profileData.email_id = this.getEmailProfileField().getValue();
+        var dashboardStore = Ext.getStore('DashboardStore');
+        dashboardStore.removeAll();
+        dashboardStore.addToStore(profileData);   
         Ext.Ajax.request({
             url:  UrlHelper.getServerUrl().profile,
             method: 'PUT',          
@@ -64,8 +71,20 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
             success : function(responseObj) {
                 try{
                     if (responseObj.status == 200 && responseObj.statusText == "OK") {
+                        var dashboardStore = Ext.getStore('DashboardStore');
+                        var userName = dashboardStore.data.items[0].data.name;
+                        localStorage.removeItem('userName');
+                        localStorage.setItem('userName', userName);
                         AppMessage.showMessageBox(6,null,null,localeString.profileSaveSuccess);
                         hideSpinner();
+                        // var profileView = this.getProfileView();
+                        // if(profileView){
+                        //     Ext.Viewport.remove(profileView, true);
+                        // }
+                        // this.addToViewPort({
+                        //     xtype : 'SlideNavigator'
+                        // },true);
+                        
                     }
                 }catch(e){
                     var errorText = localeString.errorMsg_defaultFailure;
@@ -86,5 +105,15 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
                 hideSpinner();
             }     
         });
+    },
+
+    handleProfileHeaderBackTap: function(){
+        var profileView = this.getProfileView();
+        if(profileView){
+            Ext.Viewport.remove(profileView, true);
+        }
+        this.addToViewPort({
+            xtype : 'SlideNavigator'
+        },true);
     }
 });

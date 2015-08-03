@@ -10,6 +10,17 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
         },
         cls: 'dashboard-view',
         items:[{
+            xtype: 'headerPanel',
+            width: '100%',
+            itemId: 'headerPanel',
+            useLeftImage: true
+        },{
+            xtype: 'image',
+            src: 'resources/images/logo.png',
+            docked: 'top',
+            itemId : 'centerLogo',
+            cls: 'center-logo-image',
+        },{
             xtype: 'container',
             layout : {
                 type : 'vbox',
@@ -27,13 +38,11 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: '',
+                    src: 'resources/images/slider/all-orders.png',
                     cls: 'name-icon'
                 },{
                     xtype: 'textfield',
                     itemId: 'nameProfileField',
-                    iconCls: 'homeicon',
-                    iconMask: true,
                     placeHolder: 'Name',
                     cls: 'other-textfield'
                 }]                
@@ -43,7 +52,7 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: '',
+                    src: 'resources/images/slider/all-orders.png',
                     cls: 'email-icon'
                 },{
                     xtype: 'emailfield',
@@ -58,12 +67,11 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: '',
+                    src: 'resources/images/slider/all-orders.png',
                     cls: 'number-icon'
                 },{
                     xtype: 'numberfield',
                     cls: 'other-textfield',
-                    readOnly: true,
                     name: 'ContactNumber',
                     itemId : 'mobileNumberProfileField'
                 }]                
@@ -75,6 +83,6 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
             docked: 'bottom',
             itemId: 'saveProfileButton',
             cls: 'save-button'
-        }]           
+        }]      
     }
 });

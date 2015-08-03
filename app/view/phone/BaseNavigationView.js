@@ -45,8 +45,9 @@ Ext.define('TheOpenDoor.view.phone.BaseNavigationView',{
 	        baseController.addToViewPort({
 	            xtype : 'SlideNavigator'
 	        });
+	        Ext.Viewport.getActiveItem().list.select(0)
 	        baseController.removeXType('MyNavView');
-        
+        	
         	
         } else {
         	this.pop();

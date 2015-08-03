@@ -36,13 +36,11 @@ Ext.define('TheOpenDoor.view.phone.DashboardView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: '',
+                    src: 'resources/images/slider/all-orders.png',
                     cls: 'name-icon'
                 },{
                     xtype: 'textfield',
                     itemId: 'nameField',
-                    iconCls: 'homeicon',
-                    iconMask: true,
                     placeHolder: 'Name',
                     cls: 'other-textfield'
                 }]                
@@ -52,7 +50,7 @@ Ext.define('TheOpenDoor.view.phone.DashboardView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: '',
+                    src: 'resources/images/slider/all-orders.png',
                     cls: 'email-icon'
                 },{
                     xtype: 'emailfield',
@@ -67,7 +65,7 @@ Ext.define('TheOpenDoor.view.phone.DashboardView', {
                 cls: 'icon-field-container',
                 items:[{
                     xtype: 'image',
-                    src: '',
+                    src: 'resources/images/slider/all-orders.png',
                     cls: 'number-icon'
                 },{
                     xtype: 'numberfield',

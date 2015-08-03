@@ -1,31 +1,37 @@
 .order-view{
 	margin-top: 10%;
 	.dataview-outercontainer{
-		width: 100%;
-		height: 100%
-	}
-	.order-view-brief-image{
-		height: 25%;
-		width: 100%;
-	}
-	.order-btn{
-		border: 1px solid #cccccc;
-		margin-top: 10%;
-		width: 50%;
-  		margin-left: 15%;
-	}
-	.rate-label{
-		margin-top: 0.5rem;
-	}
-	.x-dataview-item{
-		height: 12rem;
-	}
-	.services-image{
-		background-size: contain;
-		height: 7rem;
-		width: 100%;
-		background-repeat: no-repeat;
-	}
+		width: 90%;
+    	margin: 1rem 5%;
+    	.service-name-label{
+    		@include text('label-regular-font2-16','single');
+    	}
+		.service-button-container{
+			width: 100%;
+			.rate-card-btn{
+			    border-radius: 0;
+			    border: 1px solid $color-font1;
+			    background-color: #f9f9f9;
+			    .x-button-label{
+			    	@include text('label-regular-font-16','single');
+			    }
+			}
+			.book-now-btn{
+				border-radius: 0;
+				border: 1px solid $color-font1;
+				background-color: $color-font1;
+				.x-button-label{
+					@include text('label-regular-font3-16','single');
+				}
+			}
+		}
+		.service-image{
+			background-size: contain;
+			height: 12rem;
+			width: 90%;
+			background-repeat: no-repeat;
+		}
+	}	
 }
 
 .view-all-orders{

@@ -48,7 +48,7 @@ Ext.define('TheOpenDoor.view.component.Header',{
             {
                 xtype: 'image',
                 itemId: 'leftImage',
-                src: '',
+                src: 'resources/images/icons/back.png',
                 align: 'left',
                 cls: 'leftHeaderImageCls',
                 hidden: true

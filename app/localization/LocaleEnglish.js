@@ -26,4 +26,13 @@ Ext.define('TheOpenDoor.localization.LocaleEnglish', {
 	//web services success strings
 	profileSaveSuccess: "Profile Updated",
 	profileDetails: "Profile Details",
+	rateCard: "Rate Card",
+	bookNow: "Book Now",
+	addAddress: 'Add Address',
+	saveAddress: 'Save Address',
+	addresses: 'Addresses',
+	addNewAddress: 'add new address',
+	delete: 'delete',
+	edit: 'edit'
+
 });

@@ -36,7 +36,7 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
         var dashboardAddressData = {};
         dashboardAddressData.phone_number = this.getMobileNumberField().getValue();
         dashboardAddressData.name = this.getNameField().getValue();
-        dashboardAddressData.email = this.getEmailField().getValue();
+        dashboardAddressData.email_id = this.getEmailField().getValue();
         var dashboardStore = Ext.getStore('DashboardStore');
         dashboardStore.addToStore(dashboardAddressData);      
         Ext.Ajax.request({
@@ -54,9 +54,12 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
             success : function(responseObj) {
                 try{
                     if (responseObj.status == 200 && responseObj.statusText == "OK") {
+                        userName = this.getNameField().getValue();
                         this.isloggedIn = true;
                         localStorage.removeItem('loggedInFlag');
                         localStorage.setItem('loggedInFlag', this.isloggedIn);
+                        localStorage.removeItem('userName');
+                        localStorage.setItem('userName', userName);
                         var dashboardView = this.getDashboardView();
                         if(dashboardView){
                             Ext.Viewport.remove(dashboardView, true);
@@ -64,6 +67,7 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
                         this.addToViewPort({
                             xtype : 'SlideNavigator'
                         },true);
+                        this.getSlideNavigator().list.select(0);
                         hideSpinner();
                     }
                 }catch(e){

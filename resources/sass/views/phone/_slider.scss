@@ -1,4 +1,5 @@
 .slide-navigator-toolbar{
+  border-bottom: 1px solid $color-border3 !important;
   .x-scroll-scroller{
     background-color: $color-font2;
   }
@@ -15,15 +16,18 @@
 }
 
 .home-slider-toolbar{
-  background-color: #919191;
+  background-color: $color-font2;
   border-radius: 0 !important;
+  height: 3.2rem;
+  z-index: 1;
 }
 .center-toolbar-image{
     background-size: contain;
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     z-index: 1000;
     top: 0;
+    margin-top: 4px;
 }
 .newUI-header-style{
   .x-toolbar{
@@ -36,14 +40,36 @@
     margin-top: 5px;
 }
 .slider-cls{
+  .x-toolbar{
+    min-height: 0 !important;
+  }
+  .x-toolbar.x-docked-top{
+    border-bottom: none;
+  }
   .x-list .x-list-item.x-list-item-tpl:before{
     border-bottom: none;
+  }
+  .x-list .x-list-item.x-item-selected.x-list-item-tpl{
+    background-color: $color-font2;
+  }
+  .x-list .x-list-item.x-list-item-tpl .x-innerhtml{
+    padding: 0;
+  }
+  .x-list .x-list-item.x-list-item-relative{
+    margin: 1rem 0;
+  }
+  .slider-label{
+    color: white;
+    font-family: "TheOpenDoorLight";
+    line-height: 42px;
+    .text{
+      margin-left: 0.5rem;
+    }
   }
 }
 .user-logo-div{
   float: left;
 }
-.user-label{
-  line-height: 4rem;
-
+.arrow-slider-image{
+    height: 20px;
 }

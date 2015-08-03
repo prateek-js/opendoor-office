@@ -40,7 +40,7 @@
                     "Security.framework": [
                         {
                             "xml": "true",
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "SystemConfiguration.framework": [
@@ -55,9 +55,24 @@
                             "count": 1
                         }
                     ],
-                    "libsqlite3.dylib": [],
-                    "Social.framework": [],
-                    "Accounts.framework": []
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "Social.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "Accounts.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ]
                 }
             },
             "config.xml": {
@@ -90,6 +105,34 @@
                         {
                             "xml": "<feature name=\"YoikScreenOrientation\"><param name=\"ios-package\" value=\"YoikScreenOrientation\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -100,10 +143,24 @@
                         {
                             "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>com.prateek.MyMaidApp</string><key>CFBundleURLSchemes</key><array><string>com.prateek.MyMaidApp</string></array></dict></array>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb$APP_ID</string></array></dict></array>",
+                            "count": 1
                         }
                     ],
-                    "FacebookAppID": [],
-                    "FacebookDisplayName": []
+                    "FacebookAppID": [
+                        {
+                            "xml": "<string>$APP_ID</string>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookDisplayName": [
+                        {
+                            "xml": "<string>$APP_NAME</string>",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         }
@@ -119,6 +176,9 @@
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         },
         "net.yoik.cordova.plugins.screenorientation": {
+            "PACKAGE_NAME": "com.prateek.MyMaidApp"
+        },
+        "com.phonegap.plugins.facebookconnect": {
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         }
     },

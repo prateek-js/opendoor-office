@@ -6,7 +6,7 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
         layout : {
             type : 'vbox',
             align : 'center',
-            pack : 'center'
+            pack : 'start'
         },
         cls: 'date-view',
         items:[{
@@ -14,11 +14,10 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
             flex: 1,
             width: '100%',
             itemId: 'headerPanel',
-            useBackButton: true,
-            useNextButton: true
+            useLeftImage: true
         },{
             xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
+            src: 'resources/images/logo.png',
             docked: 'top',
             itemId : 'centerLogo',
             cls: 'center-logo-image',
@@ -27,8 +26,8 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
             flex: 9,
             layout: {
                 type: 'vbox',
-                align: 'center',
-                pack: 'stretch'
+                align: 'start',
+                pack: 'start'
             },
             cls: 'date-time-container',           
             items: [{
@@ -42,15 +41,15 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
                 },
                 cls: 'date-picker-container',
                 items:[{
-                    xtype : 'label',
-                    html : 'Order Date',
+                    xtype : 'image',
+                    src : 'resources/images/slider/all-orders.png',
                     cls : 'order-date-label'
                 },{
                    xtype:'DatePickerField',
                     cls:'datePickerTextFieldCls',
                     pickerCls:['timePickerCls'],
                     clearIcon:false,
-                    itemId:'datePickerId',
+                    id:'datePickerId',
                     pickerHeight:'10.5em' 
                 }]                
             },{
@@ -62,15 +61,15 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
                 itemId: 'timePickerContainer',
                 hidden :true,
                 items:[{
-                    xtype : 'label',
-                    html : 'Order Time',
+                    xtype : 'image',
+                    src : 'resources/images/slider/all-orders.png',
                     cls : 'order-time-label'
                 },{
                     xtype:'TimePickerField',
                     cls:'timePickerTextFieldCls',
                     pickerCls:['timePickerCls'],
                     clearIcon:false,
-                    itemId:'timePickerId',
+                    id:'timePickerId',
                     pickerHeight:'10.5em'
                 }]
             },{
@@ -79,6 +78,13 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
                 cls: 'date-time-selected-label',
                 itemId: 'dateTimeSelectedLabel'
             }]
+        },{
+            xtype: 'button',
+            ui: 'plain',
+            text: 'Continue',
+            docked: 'bottom',
+            itemId: 'dateTimeContinueButton',
+            cls: 'date-time-continue-button'
         }]           
     }
 });

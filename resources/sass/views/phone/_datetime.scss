@@ -1,48 +1,89 @@
 .date-view{
 	.date-time-container{
+		width: 90%;
+    	margin-top: 3rem;
 		.date-time-label{
 			.x-innerhtml{
-				font-size: 1rem;
-				width: 80%;
-				margin: 5% 10%;
-				text-align: center;
+				@include text('label-regular-font2-16','single');
+				white-space: inherit;
+    			word-wrap: break-word;
 			}
 		}
 		.date-picker-container{
-			width: 80%;
-			margin: 5% 10%;
+			width: 100%;
+    		margin: 5% 0 0 0;
+		    border-bottom: 1px solid #eaeaea;
+		    height: 2.6rem;
 			.order-date-label{
-				.x-innerhtml{
-					font-size: 1rem;
-					line-height: 42px;
-					margin-right: 1rem;
-				}
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
 			}
 			.datePickerTextFieldCls{
-
+				height: 2.2rem;
+			    width: 100%;
+				.x-field-input{
+					border-radius: 0;
+					border: none;
+					border-left: 1.5px solid $color-font1 !important;
+					height: 2rem;
+    				margin-bottom: 0.2rem;
+				}
+				.x-input-el{
+					min-height: 2rem;
+				    height: 2rem;
+				    padding: 0.7rem;
+				    @include text('label-regular-font2-16','single');
+				}
 			}
 		}
 		.time-picker-container{
-			width: 80%;
-			margin: 5% 10%;
+			width: 100%;
+    		margin: 5% 0 0 0;
+		    border-bottom: 1px solid #eaeaea;
+		    height: 2.6rem;
 			.order-time-label{
-				.x-innerhtml{
-					font-size: 1rem;
-					line-height: 42px;
-					margin-right: 1rem;
-				}
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
 			}
 			.timePickerTextFieldCls{
-
+				height: 2.2rem;
+				width: 100%;
+				.x-field-input{
+					border-radius: 0;
+					border: none;
+					border-left: 1.5px solid $color-font1 !important;
+					height: 2rem;
+    				margin-bottom: 0.2rem;
+				}
+				.x-input-el{
+					min-height: 2rem;
+				    height: 2rem;
+				    padding: 0.7rem;
+				    @include text('label-regular-font2-16','single');
+				}
 			}
 		}
 		.date-time-selected-label{
 			.x-innerhtml{
-				font-size: 1rem;
 				width: 80%;
 				margin: 5% 10%;
 				text-align: center;
+				@include text('label-regular-font-24','single');
+				white-space: inherit;
+    			word-wrap: break-word;
 			}
+		}
+	}
+	.date-time-continue-button{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
 		}
 	}
 }

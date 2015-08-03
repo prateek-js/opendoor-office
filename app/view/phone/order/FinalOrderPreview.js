@@ -9,10 +9,10 @@ Ext.define('TheOpenDoor.view.phone.order.FinalOrderPreview', {
             width: '100%',
             itemId: 'headerPanel',
             flex: 1,
-            useBackButton: true,
+            useLeftImage: true
         },{
             xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
+            src: 'resources/images/logo.png',
             docked: 'top',
             itemId : 'centerLogo',
             cls: 'center-logo-image',

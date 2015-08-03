@@ -63,7 +63,7 @@ Ext.define('TheOpenDoor.businessObject.DateTimeBO', {
 
     onDateTimeFailure: function(responseObj, opts){
     	var decodedObj = (responseObj.statusText);
-        errorHandled = this.genericErrorCheck(responseObj, false);
+        errorHandled = genericErrorCheck(responseObj, false);
         if(!errorHandled){
             var errorText = "Error";
             AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);

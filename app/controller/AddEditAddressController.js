@@ -19,9 +19,9 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
             baseNavigationView: 'BaseNavigationView',
             addressView: 'AddressView',
             addEditAddress : 'AddEditAddress',
-            addressBackButton: 'AddressOrderService [itemId=headerPanel] button[itemId=backButtonId]',
+            addressBackButton: 'AddressOrderService [itemId=headerPanel] [itemId=leftImage]',
             addressNextButton: 'AddressOrderService [itemId=headerPanel] button[itemId=nextButtonId]',
-            addressEditCancelButton: 'AddEditAddress button[itemId=cancelButtonId]',
+            addressEditCancelButton: 'AddEditAddress [itemId=headerPanel] [itemId=leftImage]',
             addressEditSaveButton : 'AddEditAddress button[itemId=saveButtonId]',
             nameField : 'AddEditAddress [itemId=nameField]',
             addresslineOne : 'AddEditAddress [itemId=addresslineOne]',
@@ -30,7 +30,11 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
             pinField : 'AddEditAddress [itemId=pinField]',
             mobileNumberField : 'AddEditAddress [itemId=mobileNumberField]',
             addNewAddressBtn: 'AddressOrderService [itemId=addNewAddressBtn]',
-            addEditAddressLabel: 'AddEditAddress [itemId=addEditAddressLabel]'
+            addEditAddressLabel: 'AddEditAddress [itemId=addEditAddressLabel]',
+            emptyAddressContainer: 'AddressOrderService [itemId=emptyAddressContainer]',
+            addressDetailContainer: 'AddressOrderService [itemId=addressDetailContainer]',
+            addAddressImage: 'AddressOrderService [itemId=addAddressImage]',
+            addAddressLabel: 'AddressOrderService [itemId=addAddressLabel]'
         },
 
         control:{
@@ -57,6 +61,12 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
             },
             addNewAddressBtn: {
                 tap: 'handleAddEditAddress'
+            },
+            addAddressImage: {
+                tap: 'handleAddEditAddress'
+            },
+            addAddressLabel: {
+                tap: 'handleAddEditAddress'
             }
         },
 	},
@@ -72,11 +82,17 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
     },
 
     handleAddressOrderServiceInit: function(){
-        showSpinner(localeString.loading);
-        var me = this;
-        successCb = this.handleGetAddressSucess,
-        failureCb = this.handleGetAddressFailure;
-        this.getAddressBO().doGetAddress(successCb, failureCb);
+        var count = Ext.getStore('AddressGetStore').getCount();
+        if(count == 0){
+            this.getEmptyAddressContainer().setHidden(false);
+            this.getAddressDetailContainer().setHidden(true);
+            this.getAddNewAddressBtn().setHidden(true);
+        }
+        else{
+            this.getEmptyAddressContainer().setHidden(true);
+            this.getAddressDetailContainer().setHidden(false);
+            this.getAddNewAddressBtn().setHidden(false);
+        }
     },
     handleGetAddressSucess: function(){
         hideSpinner();
@@ -94,18 +110,15 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
             //open edit and add address field
             addressToEdit = dataitem.getRecord().getData();
             this.getBaseNavigationView().pushtoNavigationView('AddEditAddress');
-            this.getAddEditAddressLabel().setHtml("Edit Existing Address");          
+            this.getAddEditAddressLabel().setHtml("Edit Address");          
         }
         else if(btnRef=="delete"){
             //send data to server and refresh the view
             this.handleAddressDelete(clickedAddressId);
         }
-        else if(btnRef=="radio"){
-            //keep the address id of clicked one
+        else{
             this.addressIdSelected = clickedAddressId;
-        }
-        else if(btnRef==""|| btnRef==" "|| btnRef== null){
-
+            this.handleAddressNextButton();
         }
     },
     handleAddressNextButton: function(){
@@ -149,7 +162,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
         btnRef = null;
         clickedAddressId = null;
         this.getBaseNavigationView().pushtoNavigationView('AddEditAddress');
-        this.getAddEditAddressLabel().setHtml("Add New Address");
+        this.getAddEditAddressLabel().setHtml("New Address");
     },
     handleAddressEditSaveButtonTap: function(){
             var newdAddressData = {};
@@ -220,7 +233,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                         },                                    
                         failure : function(responseObj) {
                             var decodedObj = (responseObj.statusText);
-                            errorHandled = this.genericErrorCheck(responseObj, false);
+                            errorHandled = genericErrorCheck(responseObj, false);
                             if(!errorHandled){
                                 var errorText = "Error";
                                 AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);
@@ -265,7 +278,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                         },                                      
                         failure : function(responseObj) {
                             var decodedObj = (responseObj.statusText);
-                            errorHandled = this.genericErrorCheck(responseObj, false);
+                            errorHandled = genericErrorCheck(responseObj, false);
                             if(!errorHandled){
                                 var errorText = "Error";
                                 AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);

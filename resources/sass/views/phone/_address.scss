@@ -1,74 +1,115 @@
 .address-service-order{
 	height: 100%;
 	width: 100%;
+	.empty-address-container{
+		.add-address-home-image{
+			background-size: contain;
+		    height: 15rem;
+		    width: 13rem;
+		}
+		.add-address-label{
+			border: none;
+    		height: 3rem;
+			.x-button-label{
+				@include text('label-light-font-44','single');
+				text-align: center;
+			}
+		}
+	}
 	.address-detail-container{
 		height: 100%;
-		width: 90%;
-		margin: 5%;
-		.add-new-address-button{
-			width: 50%;
-			margin: 0 25%;
-			border: 1px solid #cccccc;
-		}
+		width: 100%;		
 		.address-diff-label{
-			height: 3rem;
-			line-height: 2rem;
-			padding: 5% 10% 5% 10%;
-			text-align: center;
-			font-size: 1rem;
+			margin-top: 3rem;
+			margin-left: 5%;
+		    margin-bottom: 0.5rem;
+			.x-innerhtml{
+				@include text('label-regular-font-24','single');
+			}
 		}
 		.address-dataview-view{
 			width: 90%;
-			height: 80%;
 			margin: 0 5%;
-			border-top: 1px solid #ccc;
+			height: 80%;
+		}
+	}
+	.add-new-address-button{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
 		}
 	}
 }
 
 .data-item-container{
-	height: 12rem;
-	margin: 1rem 0;
-	border-bottom: 1px solid #cccccc;
+	height: 15rem;
+	margin: 0 0 1rem 0;
+	border: 1px solid $color-border2;
+	background-color: $color-background1;
 	.full-address-container{
+		width: 93%;
+    	margin: 0 3.5%;
 		.full-address-div{
 
 		}
 		.address-name{
-			font-size: 1rem;
-			text-align: center;
+			height: 1.5rem;
+			border-bottom: 1px solid $color-border1;
+			@include text('label-regular-font2-16','single');
+			margin-top: 0.5rem;
 		}
 		.address-line{
-			font-size: 1rem;
+			height: 1.5rem;
 			text-align: justify;
+			margin-top: 0.5rem;
+			border-bottom: 1px solid $color-border1;
+			@include text('label-regular-font2-16','single');
 		}
 		.address-cps{
-			font-size: 1rem;
+			height: 1.5rem;
 			text-align: justify;
+			margin-top: 0.5rem;
+			border-bottom: 1px solid $color-border1;
+			@include text('label-regular-font2-16','single');
 		}
 		.address-country{
-			font-size: 1rem;
+			height: 1.5rem;
 			text-align: justify;
-		}
-	}
-	.address-radiofield{
-		background-color: transparent;
-		width: 2rem;
-		.x-field-input{
-			border: none;
-			min-width: 2rem;
-			height: 1.5rem;
-		}
-		.x-field .x-field-input{
-			min-width: 2rem;
-			height: 1.5rem;
-		}
-		.x-field .x-input-el{
-			height: 2rem;
-			min-height: 2rem;
+			margin-top: 0.5rem;
+			border-bottom: 1px solid $color-border1;
+			@include text('label-regular-font2-16','single');
 		}
 	}
 	.address-deledit-button-container{
+		width: 100%;
+		.delete-container{
+			margin-right: 2rem;
+			.address-delete-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2rem;
+			}
+			.address-delete-label{
+				@include text('label-regular-font-12','single');
+				text-align: center;
+			}
+		}
+		.edit-container{
+		    margin-right: 3%;
+			.address-edit-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2rem;
+			}
+			.address-edit-label{
+				@include text('label-regular-font-12','single');
+				text-align: center;
+			}
+		}
 		.address-edit-button{
 			border: 1px solid #cccccc;
 			margin-right: 15%;
@@ -94,37 +135,74 @@
 
 .add-edit-address-view{
 	.dashboard-view-container{
-		width: 80%;
-		margin: 10%;
+		width: 90%;
+    	margin: 4rem 5% 10% 5%;
 		.add-edit-address-label{
 			text-align: center;
-			font-size: 1rem;
-			margin-bottom: 1rem;
+			.x-innerhtml{
+				@include text('label-regular-font-24','single');
+			}
+		}
+		.icon-field-container{
+			width: 100%;
+			border-bottom: 1px solid $color-border1 !important;
+			margin: 0.5rem 0 0;
+			.name-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
+			}
+			.call-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
+			}
+			.address-icon{
+				background-size: contain;
+			    height: 2rem;
+			    width: 2.5rem;
+			}
+			.name-textfield{
+				width: 90%;
+				.x-field-input{
+	  				border-radius: 0;
+	  				border: none;
+				}
+				.x-input-el{
+					border-left: 1px solid $color-font1 !important;
+					border: none;
+					margin-bottom: 0.2rem;
+					min-height: 2rem !important;
+					@include text('label-regular-font2-16','single');
+				}
+			}
 		}
 		.other-textfield{
 			width: 90%;
-			margin: 2% 5%;
-		}
-		.address-textfield{
-			width: 90%;
-			margin: 2% 5%;
-		}
-		.mobile-number-field{
-			width: 90%;
-			margin: 2% 5%;
-		}
-		.save-cancel-btn-container{
-			width: 90%;
-			margin: 2% 5%;
-			.save-address-button{
-				border: 1px solid #cccccc;
-				margin-right: 15%;
+			margin-left: 10%;
+			margin-top: 0.5rem;
+			border-bottom: 1px solid $color-border1 !important;
+			.x-field-input{
+	  			border-radius: 0;
+	  			border: none;
 			}
-			.cancel-address-button{
-				border: 1px solid #cccccc;
-				margin-right: 0.2rem;
+			.x-input-el{
+				border: none;
+				margin-bottom: 0.2rem;
+				min-height: 2rem !important;
+				@include text('label-regular-font2-16','single');
 			}
 		}
+	}
+	.save-address-button{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
+		}		
 	}
 }
 

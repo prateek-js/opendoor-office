@@ -6,17 +6,18 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
         layout : {
             type : 'vbox',
             align : 'center',
-            pack : 'stretch'
+            pack : 'start'
         },
         cls: 'add-edit-address-view',
         items:[{
             xtype: 'headerPanel',
             width: '100%',
             itemId: 'headerPanel',
-            flex: 1
+            flex: 1,
+            useLeftImage: true
         },{
             xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
+            src: 'resources/images/logo.png',
             docked: 'top',
             itemId : 'centerLogo',
             cls: 'center-logo-image',
@@ -24,6 +25,8 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
             xtype: 'container',
             layout : {
                 type : 'vbox',
+                align: 'start',
+                pack: 'start'
             },
             flex: 9,
             cls: 'dashboard-view-container',
@@ -33,19 +36,51 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
                 cls: 'add-edit-address-label',
                 html: ''
             },{
-                xtype: 'textfield',
-                itemId: 'nameField',
-                placeHolder: 'Name',
-                cls: 'other-textfield'
+                xtype: 'container',
+                layout: 'hbox',
+                cls: 'icon-field-container',
+                items:[{
+                    xtype: 'image',
+                    src: 'resources/images/slider/all-orders.png',
+                    cls: 'name-icon'
+                },{
+                    xtype: 'textfield',
+                    itemId: 'nameField',
+                    placeHolder: 'Name',
+                    cls: 'name-textfield'
+                }]                
+            },{
+                xtype: 'container',
+                layout: 'hbox',
+                cls: 'icon-field-container',
+                items:[{
+                    xtype: 'image',
+                    src: 'resources/images/slider/all-orders.png',
+                    cls: 'call-icon'
+                },{
+                    xtype: 'numberfield',
+                    itemId: 'mobileNumberField',
+                    placeHolder: '9876543210',
+                    cls: 'name-textfield'
+                }]                
+            },{
+                xtype: 'container',
+                layout: 'hbox',
+                cls: 'icon-field-container',
+                items:[{
+                    xtype: 'image',
+                    src: 'resources/images/slider/all-orders.png',
+                    cls: 'address-icon'
+                },{
+                    xtype: 'textfield',
+                    itemId: 'addresslineOne',
+                    placeHolder: 'Line 1',
+                    cls: 'name-textfield'
+                }]                
             },{
                 xtype: 'textfield',
-                itemId: 'addresslineOne',
-                placeHolder: 'Address Line 1',
-                cls: 'address-textfield'
-			},{
-                xtype: 'textfield',
                 itemId: 'addresslineTwo',
-                placeHolder: 'Address Line 2',
+                placeHolder: 'Line 2',
                 cls: 'other-textfield'
             },{
                 xtype: 'textfield',
@@ -57,32 +92,14 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
                 itemId: 'pinField',
                 placeHolder: 'Pin',
                 cls: 'other-textfield'
-            },{
-                xtype: 'numberfield',
-                cls: 'mobile-number-field',
-                placeHolder: 'Phone Number',
-                itemId : 'mobileNumberField'
-            },{
-                xtype: 'container',
-                layout: 'hbox',
-                cls: 'save-cancel-btn-container',
-                items:[{
-                    xtype: 'button',
-                    ui: 'plain',
-                    text: 'Save',
-                    itemId: 'saveButtonId',
-                    flex: 1,
-                    cls: 'save-address-button'
-                },{
-                    xtype: 'button',
-                    ui: 'plain',
-                    text: 'Cancel',
-                    itemId: 'cancelButtonId',
-                    flex: 1,
-                    cls: 'cancel-address-button'
-                }]
-                
             }]
+        },{
+            xtype: 'button',
+            ui: 'plain',
+            text: localeString.saveAddress,
+            docked: 'bottom',
+            itemId: 'saveButtonId',
+            cls: 'save-address-button'            
         }]           
     }
 });

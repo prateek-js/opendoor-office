@@ -45,6 +45,7 @@ Ext.define('TheOpenDoor.businessObject.GetAddressBO', {
             if (Ext.isObject(decodedObj)&& decodedObj.addresses != null) {
                 addressGetStore.removeAll();
                 addressGetStore.addToStore(decodedObj.addresses);
+                 TheOpenDoor.app.getController('OrderStartController').handleGetAddressSucess();
                 hideSpinner(); 	
     	    }
     	}catch(e){
@@ -58,7 +59,7 @@ Ext.define('TheOpenDoor.businessObject.GetAddressBO', {
 
     onGetAddressFailure: function(responseObj, opts){
     	var decodedObj = (responseObj.statusText);
-        errorHandled = this.genericErrorCheck(responseObj, false);
+        errorHandled = genericErrorCheck(responseObj, false);
         if(!errorHandled){
             var errorText = "Error";
             AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);

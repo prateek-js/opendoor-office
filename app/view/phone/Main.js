@@ -14,21 +14,8 @@ Ext.define('TheOpenDoor.view.phone.Main', {
         },
         cls: 'main-view-container',
         items:[{
-            xtype: 'headerPanel',
-            flex: 1,
-            width: '100%'
-        },{
-            xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
-            docked: 'top',
-            itemId : 'centerLogo',
-            cls: 'center-logo-image',
-        },{
             xtype: 'carousel',
             direction: 'horizontal',
-            flex: 9,
-            height: '90%',
-            width: '90%',
             cls: 'carousel-container',
             itemId : 'carouselContainer',
             defaults: {
@@ -47,9 +34,6 @@ Ext.define('TheOpenDoor.view.phone.Main', {
                 xtype: 'image',
                 src : "resources/images/download.jpeg"
             }]
-        },{
-            xtype : 'spacer',
-            flex: 1
         }]
     }
 });

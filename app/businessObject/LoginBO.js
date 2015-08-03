@@ -25,8 +25,9 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
         
         this.inputDetails = {
        		"email_id": authResult.email,
-       		"gender": authResult.gender,
-       		"displayName": authResult.displayName
+            //"email_id": authResult,
+       		 "gender": authResult.gender,
+       		 "displayName": authResult.displayName
         };
         
         this.doLoginAjaxRequest();
@@ -62,6 +63,9 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
         	var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
             if (Ext.isObject(decodedObj)) {
             	createUserStore.addToStore(decodedObj);
+                this.user_Id = decodedObj.user_id;
+                localStorage.removeItem('user_Id');
+                localStorage.setItem('user_Id', this.user_Id);
                 TheOpenDoor.app.getController('LoginController').handleSignInSucess();
     	    }
     	}catch(e){
@@ -79,11 +83,14 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
             var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
             if (Ext.isObject(decodedObj)) {
                 createUserStore.addToStore(decodedObj);
+                this.user_Id = decodedObj.user_id;
+                localStorage.removeItem('user_Id');
+                localStorage.setItem('user_Id', this.user_Id);
                 TheOpenDoor.app.getController('LoginController').handleSignInSucess();
             }
             return;
         }
-        errorHandled = this.genericErrorCheck(responseObj, false);
+        errorHandled = genericErrorCheck(responseObj, false);
         if(!errorHandled){
             var errorText = "Error";
             AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);
