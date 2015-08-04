@@ -26,6 +26,13 @@ Ext.define('TheOpenDoor.model.GetAllOrderModel', {
 					val = splitDateAndTimeRetDate(record.get('slot_start_time'));
 					return val;
 				}
+			},{
+				name: 'imagePath',
+				type: 'string',
+				convert: function(value,record){
+					val = record.get('status');
+					return 'resources/images/orders/'+val+'.png';
+				}
 			}
 	   	]
    	}

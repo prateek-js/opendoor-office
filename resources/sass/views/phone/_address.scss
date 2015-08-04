@@ -151,16 +151,19 @@
 				background-size: contain;
 			    height: 2rem;
 			    width: 2.5rem;
+			    margin-top: 0.3rem;
 			}
 			.call-icon{
 				background-size: contain;
 			    height: 2rem;
 			    width: 2.5rem;
+			    margin-top: 0.2rem;
 			}
 			.address-icon{
 				background-size: contain;
 			    height: 2rem;
 			    width: 2.5rem;
+			    margin-top: 0.3rem;
 			}
 			.name-textfield{
 				width: 90%;
@@ -204,30 +207,4 @@
 			@include text('label-light-white-32','single');
 		}		
 	}
-}
-
-.final-order-preview{
-	.final-order-container{
-		width: 90%;
-		margin: 10% 5%;
-		.selected-service-label{
-			text-align: center;
-			margin-bottom: 1rem;
-		}
-		.selected-time-label{
-			text-align: center;
-			margin: 2% 5%;
-		}
-		.selected-address-label{
-			text-align: center;
-			margin: 2% 5%;
-			line-height: 1.5rem;
-		}
-		.place-order-button{
-			border: 1px solid #cccccc;
-			width: 50%;
-			margin: 5% 20%;
-		}
-	}
-	
 }

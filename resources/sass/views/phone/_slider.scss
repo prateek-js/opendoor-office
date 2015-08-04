@@ -38,6 +38,8 @@
 .slider-icon{
     height: 50px;
     margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .slider-cls{
   .x-toolbar{
@@ -72,4 +74,22 @@
 }
 .arrow-slider-image{
     height: 20px;
+}
+.menulist{
+  background-image: url(../images/slider/menu.png);
+  background-size: 2rem 2rem;
+}
+.user-label{
+    line-height: 4rem;
+    color: white;
+    font-family: TheOpenDoorLight;
+    display: inline;
+    width: 69%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    word-wrap: normal;
+    max-width: 69%;
+    position: absolute;
+    padding-right: 0.6rem;
 }

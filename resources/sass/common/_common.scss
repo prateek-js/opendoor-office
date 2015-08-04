@@ -3,3 +3,38 @@
         white-space: nowrap !important;
     }
 }
+.x-msgbox{
+	border-radius: 3px;
+	background-color: $color-font1;
+    background-image: none;
+}
+.x-msgbox .x-msgbox-buttons .x-toolbar-inner .x-button{
+	border: none;
+	.x-button-label{
+		@include text('label-regular-font3-16','single');
+	}
+}
+
+.x-msgbox-text{
+	@include text('label-regular-font3-24','single');
+	.x-innerhtml{
+		text-overflow: ellipsis;
+    	word-wrap: break-word;
+   		white-space: pre;
+	}
+}
+.x-msgbox .x-msgbox-title .x-title{
+	@include text('label-regular-font3-24','single');
+	.x-innerhtml{
+		text-overflow: ellipsis;
+    	word-wrap: break-word;
+   		white-space: pre;
+	}
+}
+.x-msgbox .x-msgbox-buttons .x-toolbar-inner .x-button.x-button-pressing{
+	background-color: #37aeb6;
+	-webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}

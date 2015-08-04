@@ -1,8 +1,8 @@
 .timePickerCls{
-	width: 13.315rem !important;
+	width: 80% !important;
 	height:10.5rem !important;
 	padding: 0 !important;
-		background-color: #475d8b !important;
+		background-color: $color-font2 !important;
 		background-image: none !important; 
 	.x-toolbar{
 		min-height: 2em !important;
@@ -13,7 +13,7 @@
 	}
 	.x-toolbar-dark{
 		background-image: none !important;
-		background-color: #475d8b !important;
+		background-color: $color-font2 !important;
 		border-color: transparent !important;
 	}
 	.x-toolbar-dark.x-docked-top {
@@ -35,18 +35,19 @@
 	}
 	.x-picker-inner{
 			margin: 0  0.4rem 0.4rem 0.4rem !important;
-			.x-picker-bar{
-				border-top: 1px solid #e65a13;
-				border-bottom: 1px solid #e65a13;
-				background-color: rgba(230,90,19,0.3);
-				box-shadow: rgba(0,0,0,0.4) 0 5px 0.2em;
-				background-image: none;
-			}
+			background-color: $color-font2 !important;
 			.x-picker-item {
-				color: black;
-				font-family: "Gill Sans";
-				font-size: 1rem;
+				text-align: left;
 			}
+	}
+	.x-picker-slot .x-dataview-item.x-item-selected{
+		@include text('label-regular-font3-16','single');
+		.x-picker-item {
+			color: $color-font1 !important;
+		}
+	}
+	.x-picker-slot .x-dataview-item{
+		@include text('label-regular-font3-16','single');
 	}
 	.x-anchor.x-anchor-top{
 		width: 0 !important;
@@ -100,13 +101,7 @@
 		}
 		.x-picker-inner{
 			margin: 0 0.4rem 0.4rem 0.4rem !important;
-			.x-picker-bar{
-				border-top: 1px solid #e65a13;
-				border-bottom: 1px solid #e65a13;
-				background-color: rgba(230,90,19,0.3);
-				box-shadow: rgba(0,0,0,0.4) 0 5px 0.2em;
-				background-image: none;
-			}
+			
 			.x-picker-item {
 			
 				

@@ -30,7 +30,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   docked: 'top',
 	        			   ui: 'plain',  
 	        			   cls: 'slide-navigator-toolbar',
-	        			   tpl: '<div><div class="user-logo-div"><img src="resources/images/user.png" class="slider-icon"></div><div class="user-label" style="line-height: 4rem; color: white; font-family: TheOpenDoorLight; display: inline">{userName}</div><div style="float: right;line-height: 4.5rem;margin-right: 0.5rem;"><img src="resources/images/icons/next.png" class="arrow-slider-image"></div></div>',
+	        			   tpl: '<div><div class="user-logo-div"><img src="resources/images/user.png" class="slider-icon"></div><div class="user-label" style="line-height: 4rem; color: white; font-family: TheOpenDoorLight; display: inline">{userName}</div><div style="float: right;line-height: 4.5rem;margin-right: 0.5rem;width: 6%;"><img src="resources/images/icons/next.png" class="arrow-slider-image"></div></div>',
 	        			   listeners:{
 	        			   		tap: {
 			                        element: 'element',
@@ -91,7 +91,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   maskOnOpen: true
 	        		   }]
 	        	   },{
-	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp All Orders</span></div>',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 40px; width: 34px" src="resources/images/slider/all-orders.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp All Orders</span></div>',
 	        		   titlename : 'All Orders',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
@@ -107,7 +107,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   }]
 	        	   },
 	        	   {
-	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/info.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp About Us</span></div>',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 40px; width: 36px" src="resources/images/slider/info.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp About Us</span></div>',
 	        		   titlename : 'About Us',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',
@@ -122,7 +122,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        			   // maskOnOpen: true
 	        		   }]
 	        	   },{
-	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 42px; width: 34px" src="resources/images/slider/call.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Contact Us</span></div>',
+	        	   		title : '<div class="list-items"><img style="float: left;margin-left: 0.5rem;height: 38px; width: 36px; margin-top: 0.2rem" src="resources/images/slider/call.png" width="34"/></div><div class="slider-label"><span class="text">&nbsp;&nbsp;&nbsp Contact Us</span></div>',
 	        		   titlename : 'Contact Us',
 	        		   slideButton: true,
 	        		   cls: 'newUI-header-style',

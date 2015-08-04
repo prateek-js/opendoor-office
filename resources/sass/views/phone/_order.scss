@@ -35,12 +35,137 @@
 }
 
 .view-all-orders{
-	.div-arrow-image{
-		background-image: url("../images/icons/right_arrow.png");
-		  background-repeat: no-repeat;
-		  background-size: contain;
-		  height: 1.5rem;
-		  width: 1.5rem;
-		  float: right;
+	.arrow-image-div{
+		float: right;
+	    width: 10%;
+	    position: relative;
+	    display: inline;
+	    height: 8rem;
+	}
+	.arrow-image{
+	    height: 3rem;
+    	margin-top: 2.5rem;
+	}
+	.all-order-list{
+
+	}
+	.order-status-image-div{
+		float: left;
+	    width: 6rem;
+	    height: 8rem;
+	}
+	.order-status-image{
+		height: 5rem;
+    	margin-top: 1.5rem;
+    	margin-bottom: 1.5rem;
+    	margin-left: 0.5rem;
+	}
+	.main-order-div{
+		height: 8rem;
+		display: inline;
+    	position: absolute;
+	}
+	.order-time{
+		@include text('label-regular-font5-16','single');
+		margin-bottom: 0.8rem;
+	}
+	.order-value-label{
+		@include text('label-regular-font2-16','single');
+	}
+	.order-date{
+		@include text('label-regular-font5-16','single');
+		margin-bottom: 0.8rem;
+    	margin-top: 1.2rem;
+	}
+	.order-service{
+		@include text('label-regular-font5-16','single');
+	}
+	.x-list .x-list-item.x-list-item-relative{
+		margin: 1rem 5%;
+    	width: 90%;
+    	border: 1px solid $color-border2;
+    	background-color: $color-background1;
+    	height: 8rem;
+	}
+	.x-list .x-list-item.x-list-item-first{
+		margin-top: 3rem;
 	}
 }
+.final-order-preview{
+	.final-order-container{
+		width: 90%;
+		margin: 10% 5%;
+		.user-name-label{
+			@include text('label-regular-font2-16','single');
+			font-weight: bold;
+			margin-top: 1.5rem;
+		}
+		.selected-service-label{
+			@include text('label-regular-font2-16','single');
+			margin-top: 0.3rem;
+    		margin-bottom: 1.5rem;
+		}
+		.maid-reach-label{
+			@include text('label-regular-font-16','single');
+			margin-bottom: 0.5rem;
+		}
+		.address-label{
+			@include text('label-regular-font2-16','single');
+			margin-bottom: 0.2rem;
+			.x-innerhtml{
+				text-overflow: ellipsis;
+    			word-wrap: break-word;
+   				white-space: pre;
+			}
+		}
+		.landmark-label{
+			@include text('label-regular-font2-16','single');
+			margin-bottom: 0.2rem;
+			.x-innerhtml{
+				text-overflow: ellipsis;
+    			word-wrap: break-word;
+   				white-space: pre;
+			}
+		}
+		.pincode-label{
+			@include text('label-regular-font2-16','single');
+			margin-bottom: 0.2rem;
+			.x-innerhtml{
+				text-overflow: ellipsis;
+    			word-wrap: break-word;
+   				white-space: pre;
+			}
+		}
+		.mobile-label{
+			@include text('label-regular-font2-16','single');
+			margin-bottom: 0.2rem;
+			.x-innerhtml{
+				text-overflow: ellipsis;
+    			word-wrap: break-word;
+   				white-space: pre;
+			}
+		}
+		.time-label{
+			@include text('label-regular-font2-16','single');
+			.x-innerhtml{
+				text-overflow: ellipsis;
+    			word-wrap: break-word;
+   				white-space: pre;
+			}
+		}
+		.order-time-label{
+			@include text('label-regular-font-16','single');
+		}	
+	}
+	.place-order-button{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
+		}
+	}
+}
+
