@@ -29,7 +29,7 @@ Ext.define('TheOpenDoor.businessObject.ProfileBO', {
 	doGetProfileAjaxRequest: function () {
     	/* Call Login API */
         this.doSendAjax({
-            url: UrlHelper.getServerUrl().profile,
+            url: BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',
             method:'GET',
 			disableCaching: false ,
             jsonData: this.inputDetails,

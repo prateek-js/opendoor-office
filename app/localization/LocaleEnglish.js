@@ -39,6 +39,10 @@ Ext.define('TheOpenDoor.localization.LocaleEnglish', {
 	yourRequest: 'Your request for ',
 	requestCreated: ' service has been created.',
 	submit: 'Submit',
-	maidReach: 'Your maid will reach your address:'
-
+	maidReach: 'Your maid will reach your address:',
+	cancelOrder: 'Cancel Order',
+	bookAgain: 'Book Again',
+	totalBill: 'Total Bill',
+	mailInvoice: 'Mail Invoice',
+	bookNow: 'Book Now'
 });

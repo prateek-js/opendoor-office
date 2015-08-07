@@ -12,10 +12,10 @@ var userName = '';
 var userEmail = '';
 var userGender = '';
 var isloggedIn = '';
-var user_Id = '6';
 var serviceIdSelected = '';
 var orderStartTime = '';
 var userProfile = '';
+//window.user_Id = 5;
 /**
     * @method handleAuthResult
     * @param {authResult}

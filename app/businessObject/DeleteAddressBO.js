@@ -31,7 +31,7 @@ Ext.define('TheOpenDoor.businessObject.DeleteAddressBO', {
 	doAddressDeleteAjaxRequest: function () {
     	/* Call Login API */
         this.doSendAjax({
-            url: UrlHelper.getServerUrl().deleteAddress,
+            url: BaseUrl.baseUrl+'users/'+window.user_Id+'/delete_addresses',
             method:'POST',
 			disableCaching: false ,
             jsonData: this.inputDetails,

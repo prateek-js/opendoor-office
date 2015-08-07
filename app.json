@@ -147,8 +147,6 @@
      */
     "resources": [
         "resources/images",
-        "resources/icons",
-        "resources/startup",
         "resources/fonts",
         "resources/js",
         "stubs"

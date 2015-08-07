@@ -26,15 +26,32 @@
 			}
 		}
 		.service-image{
-			background-size: contain;
-			height: 12rem;
-			width: 90%;
+			background-size: 100% 100%;
+			height: 15rem;
+			width: 100%;
 			background-repeat: no-repeat;
 		}
 	}	
 }
 
 .view-all-orders{
+	.no-order-container{
+		.no-order-image{
+			background-size: contain;
+    		height: 12rem;
+    		width: 100%;
+		}
+	}
+	.no-order-book-now-btn{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
+		}
+	}
 	.arrow-image-div{
 		float: right;
 	    width: 10%;
@@ -89,6 +106,9 @@
 	}
 	.x-list .x-list-item.x-list-item-first{
 		margin-top: 3rem;
+	}
+	.x-list .x-list-item.x-item-selected.x-list-item-tpl{
+		background-color: $color-border2;
 	}
 }
 .final-order-preview{
@@ -169,3 +189,70 @@
 	}
 }
 
+.order-detail{
+	.order-detail-container{
+		width: 100%;
+		margin-top: 2rem;
+		.order-id-status-service{
+			width: 100%;
+		    height: 4rem;
+		    padding: 0 5%;
+		    border-bottom: 1px solid #eaeaea;
+			.order-service-id{
+				.order-service{
+					@include text('label-regular-font-16','single');
+				}
+				.order-id{
+					@include text('label-regular-font-16','single');
+				}
+			}
+			.order-status{
+				@include text('label-regular-font-16','single');
+				margin-top: 1.4rem;
+				.x-innerhtml{
+				    height: 1.5rem;
+				    background-color: $color-font2;
+				    padding: 0 0.5rem;
+				}
+			}
+		}
+		.booked-time-container{
+
+		}
+		.address-container{
+
+		}
+		.scheduled-time-container{
+
+		}
+		.time-container{
+			.start-time-label{
+
+			}
+		}
+		.total-bill-container{
+			.total-bill{
+				.order-service{
+
+				}
+				.bill-value{
+
+				}
+			}
+			.mail-invoice-button{
+				
+			}
+		}
+
+	}
+	.cancel-order-button{
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-font1;
+		height: 3.2rem;
+		.x-button-label{
+			@include text('label-light-white-32','single');
+		}
+	}
+}

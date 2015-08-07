@@ -19,6 +19,28 @@ Ext.define('TheOpenDoor.view.phone.AllOrderView',{
 			ui: 'plain',
 			store:'GetAllOrderStore',
 			flex: 0.88
+		},{
+			xtype: 'container',
+			layout:{
+				type: 'vbox',
+				pack: 'center',
+				align: 'center'
+			},
+			cls: 'no-order-container',
+			itemId: 'noOrderContainer',
+			hidden: true,
+			flex: 1,
+			items:[{
+				xtype: 'image',
+				src: 'resources/images/orders/no-orders.png',
+				cls: 'no-order-image'
+			},{
+				xtype: 'button',
+				itemId: 'bookNowBtn',
+				cls: 'no-order-book-now-btn',
+				text: localeString.bookNow,
+				docked: 'bottom'
+			}]
 		}]
 	}
 });

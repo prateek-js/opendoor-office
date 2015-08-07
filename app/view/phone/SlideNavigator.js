@@ -114,7 +114,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
+	        			   title: '<image src="resources/images/logo.png" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{
@@ -129,7 +129,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
+	        			   title: '<image src="resources/images/logo.png" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{

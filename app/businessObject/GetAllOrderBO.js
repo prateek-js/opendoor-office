@@ -28,7 +28,7 @@ Ext.define('TheOpenDoor.businessObject.GetAllOrderBO', {
 	doGetAllOrderAjaxRequest: function () {
     	/* Call Login API */
         this.doSendAjax({
-            url: UrlHelper.getServerUrl().allOrder,
+            url: BaseUrl.baseUrl+'orders?user_id='+window.user_Id,
             method:'GET',
 			disableCaching: false ,
             jsonData: this.inputDetails,
@@ -46,7 +46,7 @@ Ext.define('TheOpenDoor.businessObject.GetAllOrderBO', {
         	var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
             if (Ext.isObject(decodedObj)&& decodedObj.orders != null) {
             	allOrderStore.addToStore(decodedObj.orders);
-                    	
+                TheOpenDoor.app.getController('AllOrderController').handleGetAllOrderSucess();       	
     	    }
     	}catch(e){
 			var errorText = localeString.errorMsg_defaultFailure;

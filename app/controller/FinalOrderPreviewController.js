@@ -17,7 +17,8 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 			landmarkCityLabel: 'FinalOrderPreview [itemId=landmarkCityLabel]',
 			pincodeLabel: 'FinalOrderPreview [itemId=pincodeLabel]',
 			mobileLabel: 'FinalOrderPreview [itemId=mobileLabel]',
-			timeLabel: 'FinalOrderPreview [itemId=timeLabel]'
+			timeLabel: 'FinalOrderPreview [itemId=timeLabel]',
+			userNameLabel: 'FinalOrderPreview [itemId=userNameLabel]'
 		},
 
 		control:{
@@ -37,6 +38,8 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 		this.getBaseNavigationView().onNavBack();
 	},
 	handleFinalOrderPreviewInit: function(){
+		var namefield = '<div>Dear ' +localStorage.getItem('userName')+ '</div>';
+		this.getUserNameLabel().setHtml(namefield);
 		var serviceSelected = serviceIdSelected;
 		var addressSelected = TheOpenDoor.app.getController('TheOpenDoor.controller.AddEditAddressController').addressIdSelected;
 		var timeSlotSelected = orderStartTime;

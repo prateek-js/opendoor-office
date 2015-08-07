@@ -9,13 +9,13 @@ Ext.define('TheOpenDoor.view.phone.OrderDetail',{
 		cls : ['order-detail'],
 		items: [{
             xtype: 'headerPanel',
+            flex: 1,
             width: '100%',
             itemId: 'headerPanel',
-            flex: 1,
-            useBackButton: true,
+            useLeftImage: true
         },{
             xtype: 'image',
-            src: 'resources/images/bulletpoint.jpg',
+            src: 'resources/images/logo.png',
             docked: 'top',
             itemId : 'centerLogo',
             cls: 'center-logo-image',
@@ -24,22 +24,133 @@ Ext.define('TheOpenDoor.view.phone.OrderDetail',{
             cls: 'order-detail-container',
             layout: {
             	type: 'vbox',
-            	pack: 'center',
-            	align: 'center'
+            	pack: 'start',
+            	align: 'stretch'
             },
+            flex: 9,
 			items:[{
-                xtype: 'button',
-                cls: 'cancel-button',
-                itemId: 'cancelButton',
-                text: 'Cancel',
-                hidden: false
-			},{
-                xtype: 'button',
-                cls: 'cancel-button',
-                itemId: 'submitFeedbackButton',
-                text: 'Submit FeedBack',
-                hidden: false
+                xtype: 'container',
+                layout: {
+                    type: 'hbox',
+                    align: 'center'
+                },
+                cls: 'order-id-status-service',
+                itemId: 'orderIdStatusService',
+                items:[{
+                    xtype: 'container',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center'
+                    },
+                    cls: 'order-service-id',
+                    itemId: 'orderServiceId',
+                    docked: 'left',
+                    items:[{
+                        xtype: 'label',
+                        html: '',
+                        cls: 'order-service',
+                        itemId: 'orderService'
+                    },{
+                        xtype: 'label',
+                        html: '',
+                        cls: 'order-id',
+                        itemId: 'orderId'
+                    }]
+                },{
+                    xtype: 'container',
+                    html: '',
+                    itemId: 'orderStatus',
+                    cls: 'order-status',
+                    docked: 'right'
+                }]
+            },{
+                xtype: 'container',
+                itemId: 'bookedTimeContainer',
+                cls: 'booked-time-container',
+                html: ''
+            },{
+                xtype: 'container',
+                itemId: 'addressContainer',
+                cls: 'address-container',
+                html: ''
+            },{
+                xtype: 'container',
+                itemId: 'scheduledTimeContainer',
+                cls: 'scheduled-time-container',
+                html: ''
+            },{
+                xtype: 'container',
+                itemId: 'timeContainer',
+                cls: 'time-container',
+                layout: {
+                    type: 'hbox'
+                },
+                items:[{
+                    xtype: 'label',
+                    itemdId: 'startTime',
+                    cls: 'start-time-label',
+                    html: ''
+                },{
+                    xtype: 'label',
+                    itemdId: 'endTime',
+                    cls: 'start-time-label',
+                    html: ''
+                },{
+                    xtype: 'label',
+                    itemdId: 'totalTime',
+                    cls: 'start-time-label',
+                    html: ''
+                }]
+            },{
+                xtype: 'container',
+                layout: {
+                    type: 'hbox',
+                    align: 'center'
+                },
+                cls: 'total-bill-container',
+                itemId: 'totalBillContainer',
+                items:[{
+                    xtype: 'container',
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center'
+                    },
+                    cls: 'total-bill',
+                    itemId: 'totalBill',
+                    docked: 'left',
+                    items:[{
+                        xtype: 'label',
+                        html: localeString.totalBill,
+                        cls: 'order-service',
+                        itemId: 'orderService'
+                    },{
+                        xtype: 'label',
+                        html: '',
+                        cls: 'bill-value',
+                        itemId: 'billValue'
+                    }]
+                },{
+                    xtype: 'button',
+                    text: localeString.mailInvoice,
+                    itemId: 'mailInvoiceBtn',
+                    cls: 'mail-invoice-button',
+                    docked: 'right'
+                }]
             }]
-		}]
+		},{
+            xtype: 'button',
+            cls: 'cancel-order-button',
+            itemId: 'cancelOrderButton',
+            text: localeString.cancelOrder,
+            hidden: false,
+            docked: 'bottom'
+        },{
+            xtype: 'button',
+            cls: 'cancel-order-button',
+            itemId: 'submitFeedbackButton',
+            text: localeString.bookAgain,
+            hidden: false,
+            docked: 'bottom'
+        }]
 	}
 });

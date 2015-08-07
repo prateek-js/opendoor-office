@@ -57,7 +57,7 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
         dashboardStore.removeAll();
         dashboardStore.addToStore(profileData);   
         Ext.Ajax.request({
-            url:  UrlHelper.getServerUrl().profile,
+            url:  BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',
             method: 'PUT',          
             headers: {'Content-Type': 'text/json'},
             waitTitle: 'Connecting',
@@ -115,5 +115,6 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
         this.addToViewPort({
             xtype : 'SlideNavigator'
         },true);
+        this.getSlideNavigator().list.select(0);
     }
 });

@@ -209,7 +209,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                 if(btnRef == "edit"){
                     newdAddressData.id = clickedAddressId;
                     Ext.Ajax.request({
-                        url: UrlHelper.getServerUrl().updateAddress,
+                        url: BaseUrl.baseUrl+'users/'+window.user_Id+'/update_address',
                         method: 'PUT',          
                         headers: {'Content-Type': 'text/json'},
                         waitTitle: 'Connecting',
@@ -252,7 +252,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                 else{
                     newdAddressData.id = null;
                     Ext.Ajax.request({
-                        url: UrlHelper.getServerUrl().addAddress,
+                        url: BaseUrl.baseUrl+'users/'+window.user_Id+'/address',
                         method: 'POST',          
                         headers: {'Content-Type': 'text/json'},
                         waitTitle: 'Connecting',

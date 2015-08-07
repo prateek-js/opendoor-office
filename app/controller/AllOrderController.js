@@ -10,11 +10,11 @@ Ext.define('TheOpenDoor.controller.AllOrderController',{
 		orderDetailBO: 'TheOpenDoor.businessObject.GetOrderDetailsBO',
 		refs:{
 			allOrderView : 'AllOrderView',
-			baseNavigationView: 'BaseNavigationView',
 			slideNavigator: 'SlideNavigator',
 			allOrderList : 'AllOrderView [itemId=allOrderList]',
 			orderDetail: 'OrderDetail',
-			orderDetailBackButton: 'OrderDetail [itemId=headerPanel] button[itemId=backButtonId]',
+            noOrderContainer: 'AllOrderView [itemId=noOrderContainer]',
+            bookNowBtn: 'AllOrderView [itemId=bookNowBtn]'
 		},
 		control:{
 			allOrderView: {
@@ -23,9 +23,9 @@ Ext.define('TheOpenDoor.controller.AllOrderController',{
 			allOrderList: {
 				itemtap : 'handleOrderListTap'
 			},
-			orderDetailBackButton: {
-				tap : 'handleOrderDetailBackBtnTap'
-			}
+            bookNowBtn: {
+                tap: 'handleBookNowBtn'
+            }
 		},
 	},
 
@@ -37,13 +37,22 @@ Ext.define('TheOpenDoor.controller.AllOrderController',{
     	return Ext.create(boName, this);
     },
     handleAllOrderViewInit: function(){
-    	showSpinner("Loading");
+    	showSpinner("Loading...");
     	var me = this;
         successCb = this.handleGetAllOrderSucess,
         failureCb = this.handleGetAllOrderFailure;
         this.getAllOrderBO().doGetAllOrder(successCb, failureCb);
     },
     handleGetAllOrderSucess: function(){
+        var count = Ext.getStore('GetAllOrderStore').getCount();
+        if(count == 0){
+            this.getNoOrderContainer().setHidden(false);
+            this.getAllOrderList().setHidden(true);
+        }
+        else{
+            this.getNoOrderContainer().setHidden(true);
+            this.getAllOrderList().setHidden(false);
+        }
     	hideSpinner();
     },
     handleGetAllOrderFailure: function(){
@@ -58,25 +67,21 @@ Ext.define('TheOpenDoor.controller.AllOrderController',{
         this.getOrderDetailBO().doGetOrderDetail(orderId,successCb, failureCb);
     },
     handleOrderDetailViewShow: function(){
-    	var orderDetailStore = Ext.getStore('OrderDetailStore');
-    	var slideNavigator = this.getSlideNavigator();
-    	if(slideNavigator){
-            Ext.Viewport.remove(slideNavigator, true);
-        }
-        this.addToViewPort({
-            xtype : 'OrderDetail'
-        },true);
-	    var record =  orderDetailStore.data.items[0].data
+    	// var slideNavigator = this.getSlideNavigator();
+    	// if(slideNavigator){
+     //        Ext.Viewport.remove(slideNavigator, true);
+     //    }
+     //    this.addToViewPort({
+     //        xtype : 'OrderDetail'
+     //    },true);
     },
-    handleOrderDetailBackBtnTap : function(){
-    	var orderDetail = this.getOrderDetail();
-    	if(orderDetail){
-            Ext.Viewport.remove(orderDetail, true);
+    handleBookNowBtn: function(){
+        var slideNavigator = this.getSlideNavigator();
+        if(slideNavigator){
+            Ext.Viewport.remove(slideNavigator, true);
         }
         this.addToViewPort({
             xtype : 'SlideNavigator'
         },true);
-        this.getSlideNavigator().list.select(1);
-
     }
 });

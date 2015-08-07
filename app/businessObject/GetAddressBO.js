@@ -28,7 +28,8 @@ Ext.define('TheOpenDoor.businessObject.GetAddressBO', {
 	doGetAddressAjaxRequest: function () {
     	/* Call Login API */
         this.doSendAjax({
-            url: UrlHelper.getServerUrl().getAddress,
+            url:BaseUrl.baseUrl+'users/'+window.user_Id+'/address',
+            //url:BaseUrl.baseUrl+'users/5/address',
             method:'GET',
 			disableCaching: false ,
             jsonData: this.inputDetails,

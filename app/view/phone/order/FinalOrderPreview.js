@@ -27,7 +27,7 @@ Ext.define('TheOpenDoor.view.phone.order.FinalOrderPreview', {
                 xtype: 'label',
                 cls: 'user-name-label',
                 itemId: 'userNameLabel',
-                html : 'Dear ' +localStorage.getItem('userName')
+                html : ''
             },{
                 xtype: 'label',
                 cls: 'selected-service-label',

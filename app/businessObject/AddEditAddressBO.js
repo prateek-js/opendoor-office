@@ -39,7 +39,7 @@ Ext.define('TheOpenDoor.businessObject.AddEditAddressBO', {
 	doAddNewEditAddressAjaxRequest: function () {
     	/* Call Login API */
         this.doSendAjax({
-            url: UrlHelper.getServerUrl().updateAddress,
+            url: BaseUrl.baseUrl+'users/'+window.user_Id+'/update_address',
             method:'PUT',
 			disableCaching: false ,
             jsonData: this.inputDetails,

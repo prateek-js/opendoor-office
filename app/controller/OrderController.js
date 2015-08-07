@@ -31,6 +31,7 @@ Ext.define('TheOpenDoor.controller.OrderController',{
         return Ext.create(boName, this);
     },
     handleOrderPageViewInit: function(){
+        window.user_Id = localStorage.getItem('user_Id')
         showSpinner("Loading");
         var me = this,
         successCb = this.handleGetServicesSucess,

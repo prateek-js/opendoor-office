@@ -34,7 +34,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddressOrderService', {
             itemId: 'emptyAddressContainer',
             items:[{
                 xtype: 'image',
-                src: '',
+                src: 'resources/images/address/add-address.png',
                 cls: 'add-address-home-image',
                 itemId: 'addAddressImage'
             },{

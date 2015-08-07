@@ -63,9 +63,9 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
         	var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
             if (Ext.isObject(decodedObj)) {
             	createUserStore.addToStore(decodedObj);
-                this.user_Id = decodedObj.user_id;
+                window.user_Id = decodedObj.user_id;
                 localStorage.removeItem('user_Id');
-                localStorage.setItem('user_Id', this.user_Id);
+                localStorage.setItem('user_Id', user_Id);
                 TheOpenDoor.app.getController('LoginController').handleSignInSucess();
     	    }
     	}catch(e){
@@ -83,9 +83,9 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
             var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
             if (Ext.isObject(decodedObj)) {
                 createUserStore.addToStore(decodedObj);
-                this.user_Id = decodedObj.user_id;
+                window.user_Id = decodedObj.user_id;
                 localStorage.removeItem('user_Id');
-                localStorage.setItem('user_Id', this.user_Id);
+                localStorage.setItem('user_Id', user_Id);
                 TheOpenDoor.app.getController('LoginController').handleSignInSucess();
             }
             return;

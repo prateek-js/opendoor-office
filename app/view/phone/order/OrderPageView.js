@@ -56,7 +56,7 @@ Ext.define('TheOpenDoor.view.phone.order.OrderPageView', {
                 html: 'Maid'
             },{
                 xtype: 'image',
-                src: '',
+                src: 'resources/images/banner.jpg',
                 cls: 'service-image'
             },{
                 xtype: 'container',

@@ -40,7 +40,8 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
         var dashboardStore = Ext.getStore('DashboardStore');
         dashboardStore.addToStore(dashboardAddressData);      
         Ext.Ajax.request({
-            url: UrlHelper.getServerUrl().profile,
+            //url: UrlHelper.getServerUrl().profile,
+            url: BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',
             method: 'PUT',          
             headers: {'Content-Type': 'text/json'},
             waitTitle: 'Connecting',
