@@ -28,8 +28,14 @@ Ext.define('TheOpenDoor.businessObject.ProfileBO', {
 
 	doGetProfileAjaxRequest: function () {
     	/* Call Login API */
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url: BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',
+            //url: BaseUrl.baseUrl+'users/'+5+'/profile',
             method:'GET',
 			disableCaching: false ,
             jsonData: this.inputDetails,

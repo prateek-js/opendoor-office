@@ -9,6 +9,7 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
             pack : 'start'
         },
         cls: 'dashboard-view',
+        id: "OpenDoorProfileView",
         items:[{
             xtype: 'headerPanel',
             width: '100%',

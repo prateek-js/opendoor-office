@@ -46,15 +46,10 @@
                     "SystemConfiguration.framework": [
                         {
                             "xml": "true",
-                            "count": 1
+                            "count": 2
                         }
                     ],
-                    "CoreGraphics.framework": [
-                        {
-                            "xml": "false",
-                            "count": 1
-                        }
-                    ],
+                    "CoreGraphics.framework": [],
                     "libsqlite3.dylib": [
                         {
                             "xml": "false",
@@ -133,6 +128,10 @@
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -179,6 +178,9 @@
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         },
         "com.phonegap.plugins.facebookconnect": {
+            "PACKAGE_NAME": "com.prateek.MyMaidApp"
+        },
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         }
     },

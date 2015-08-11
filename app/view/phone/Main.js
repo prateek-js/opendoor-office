@@ -13,6 +13,7 @@ Ext.define('TheOpenDoor.view.phone.Main', {
             pack : 'center'
         },
         cls: 'main-view-container',
+        id: "OpenDoorMainView",
         items:[{
             xtype: 'carousel',
             direction: 'horizontal',

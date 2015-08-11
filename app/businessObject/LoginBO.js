@@ -45,6 +45,11 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
     },
 	doLoginAjaxRequest: function () {
     	/* Call Login API */
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url: UrlHelper.getServerUrl().createUser,
             method:'POST',

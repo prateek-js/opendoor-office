@@ -9,6 +9,7 @@ Ext.define('TheOpenDoor.view.phone.order.DateTimeView', {
             pack : 'start'
         },
         cls: 'date-view',
+        id: "OpenDoorDateTime",
         items:[{
             xtype: 'headerPanel',
             flex: 1,

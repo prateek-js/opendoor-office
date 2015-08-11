@@ -5,6 +5,7 @@ Ext.define('TheOpenDoor.view.phone.order.MyNavView', {
     ],
     config: {
         layout : 'fit',
+        id: "OpenDoorMyNavView",
         items:[{
         	xtype: 'BaseNavigationView',
         	itemId: 'orderStart',

@@ -27,6 +27,11 @@ Ext.define('TheOpenDoor.businessObject.OrderServicesBO', {
 
 	doOrderServicesAjaxRequest: function () {
     	/* Call Login API */
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url: UrlHelper.getServerUrl().getServices,
             method:'GET',

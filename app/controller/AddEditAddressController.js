@@ -51,7 +51,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                 tap : 'handleAddressNextButton'
             },
             addressEditCancelButton:{
-                tap : 'handleAddressBackButtonTap'
+                tap : 'handleEditAddressCancelButtonTap'
             },
             addressEditSaveButton:{
                 tap : 'handleAddressEditSaveButtonTap'
@@ -101,6 +101,11 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
         hideSpinner();
     },
     handleAddressBackButtonTap: function(){
+        window.pageCount = 1;
+        this.getBaseNavigationView().onNavBack();
+    },
+    handleEditAddressCancelButtonTap: function(){
+        window.pageCount = 2;
         this.getBaseNavigationView().onNavBack();
     },
     addressViewDataItemTap:function(dataview,index,dataitem){
@@ -108,6 +113,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
         clickedAddressId = dataitem.getRecord().getData().id;
         if(btnRef=="edit"){
             //open edit and add address field
+            window.pageCount = 3;
             addressToEdit = dataitem.getRecord().getData();
             this.getBaseNavigationView().pushtoNavigationView('AddEditAddress');
             this.getAddEditAddressLabel().setHtml("Edit Address");
@@ -130,6 +136,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
         }
         else{
             //tell user to select the address
+            window.pageCount = 4;
            this.getBaseNavigationView().pushtoNavigationView('FinalOrderPreview');
         }
     },
@@ -164,6 +171,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
         }
     },
     handleAddEditAddress: function(){
+        window.pageCount = 3;
         btnRef = null;
         clickedAddressId = null;
         this.getBaseNavigationView().pushtoNavigationView('AddEditAddress');
@@ -208,6 +216,11 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                 showSpinner();
                 if(btnRef == "edit"){
                     newdAddressData.id = clickedAddressId;
+                    if(!isOnLine()) {
+                        hideSpinner();
+                        AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+                        return;
+                    }
                     Ext.Ajax.request({
                         url: BaseUrl.baseUrl+'users/'+window.user_Id+'/update_address',
                         method: 'PUT',          
@@ -251,6 +264,11 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                 }
                 else{
                     newdAddressData.id = null;
+                    if(!isOnLine()) {
+                        hideSpinner();
+                        AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+                        return;
+                    }
                     Ext.Ajax.request({
                         url: BaseUrl.baseUrl+'users/'+window.user_Id+'/address',
                         method: 'POST',          
@@ -294,6 +312,7 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
                         }                             
                     });
                 }
+                window.pageCount = 2;
                 this.getBaseNavigationView().onNavBack();
             }           
     }    

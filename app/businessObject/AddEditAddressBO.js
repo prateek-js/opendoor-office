@@ -38,6 +38,11 @@ Ext.define('TheOpenDoor.businessObject.AddEditAddressBO', {
 
 	doAddNewEditAddressAjaxRequest: function () {
     	/* Call Login API */
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url: BaseUrl.baseUrl+'users/'+window.user_Id+'/update_address',
             method:'PUT',

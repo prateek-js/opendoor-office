@@ -8,6 +8,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddressItem',{
         },
         btnRef:'',
         itemId:'addressItemCnt',
+        id: "OpenDoorAddressItemCnt",
         cls: 'data-item-container',
         items: [{
         	xtype: 'container',

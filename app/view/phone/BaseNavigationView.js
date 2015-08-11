@@ -47,8 +47,6 @@ Ext.define('TheOpenDoor.view.phone.BaseNavigationView',{
 	        });
 	        Ext.Viewport.getActiveItem().list.select(0)
 	        baseController.removeXType('MyNavView');
-        	
-        	
         } else {
         	this.pop();
         }        

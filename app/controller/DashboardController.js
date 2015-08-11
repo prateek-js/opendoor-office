@@ -38,7 +38,12 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
         dashboardAddressData.name = this.getNameField().getValue();
         dashboardAddressData.email_id = this.getEmailField().getValue();
         var dashboardStore = Ext.getStore('DashboardStore');
-        dashboardStore.addToStore(dashboardAddressData);      
+        dashboardStore.addToStore(dashboardAddressData);
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }    
         Ext.Ajax.request({
             //url: UrlHelper.getServerUrl().profile,
             url: BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',

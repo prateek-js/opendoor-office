@@ -27,6 +27,11 @@ Ext.define('TheOpenDoor.businessObject.GetAddressBO', {
 
 	doGetAddressAjaxRequest: function () {
     	/* Call Login API */
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url:BaseUrl.baseUrl+'users/'+window.user_Id+'/address',
             //url:BaseUrl.baseUrl+'users/5/address',

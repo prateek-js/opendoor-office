@@ -33,16 +33,16 @@ Ext.define('TheOpenDoor.businessObject.GetOrderDetailsBO', {
             AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
             return;
         }
-           this.doSendAjax({
-                url: UrlHelper.getServerUrl().orderDetail+this.orderId,
-                method:'GET',
-                disableCaching: false ,
-                jsonData: this.inputDetails,
-                success: this.doGetOrderDetailSuccess,
-                failure: this.doGetOrderDetailFailure,
-                scope: this,
-                timeout: 30000
-            }); 
+        this.doSendAjax({
+            url: UrlHelper.getServerUrl().orderDetail+this.orderId,
+            method:'GET',
+            disableCaching: false ,
+            jsonData: this.inputDetails,
+            success: this.doGetOrderDetailSuccess,
+            failure: this.doGetOrderDetailFailure,
+            scope: this,
+            timeout: 30000
+        }); 
         
                 
     },

@@ -2,19 +2,23 @@
 Ext.define('TheOpenDoor.controller.OrderController',{
 	extend : 'TheOpenDoor.controller.BaseController',
 	requires: [
-        'TheOpenDoor.businessObject.OrderServicesBO'
+        'TheOpenDoor.businessObject.OrderServicesBO',
+        'TheOpenDoor.view.component.RateCardPopup'
     ],
 	config : {
+        overlay: null,
         orderServicesBO: 'TheOpenDoor.businessObject.OrderServicesBO',
         refs:{
             slideNavigator: 'SlideNavigator',
             dashboardView: 'DashboardView',
             orderPageView: 'OrderPageView',
             dateTimeView: 'DateTimeView',
+            rateCardPopup: 'RateCardPopup',
             orderServicesDataView: 'OrderPageView [itemId = orderServicesDataView]',
             serviceNameLabel: 'OrderPageView [itemId = serviceNameLabel]',
             rateCardBtn: 'OrderPageView button[itemId = rateCardBtn]',
             bookNowBtn: 'OrderPageView button[itemId = bookNowBtn]',
+            rateCardText: 'RateCardPopup [itemId = rateCardText]'
         },
 
         control:{
@@ -23,6 +27,9 @@ Ext.define('TheOpenDoor.controller.OrderController',{
             },
             bookNowBtn: {
                 tap : 'handleDataViewTap'
+            },
+            rateCardBtn: {
+                tap: 'handleRateCardBtnTap'
             }
         },
 	},
@@ -50,6 +57,7 @@ Ext.define('TheOpenDoor.controller.OrderController',{
     handleDataViewTap: function(){
         var orderServiceStore = Ext.getStore('OrderServiceStore');
         serviceIdSelected = orderServiceStore.data.items[0].data.service_id;
+        window.pageCount = 1;
         var slideNavigator = this.getSlideNavigator();    
         if(slideNavigator){
             Ext.Viewport.remove(slideNavigator, true);
@@ -57,5 +65,15 @@ Ext.define('TheOpenDoor.controller.OrderController',{
         this.addToViewPort({
             xtype : 'MyNavView'
         },true);
+    },
+    handleRateCardBtnTap: function(){
+        Ext.Viewport.remove(this.getOverlay(), true);
+        var overlay= Ext.create('TheOpenDoor.view.component.RateCardPopup');
+        this.setOverlay(overlay);
+        Ext.Viewport.add(overlay);
+        overlay.show();
+        var orderServiceStore = Ext.getStore('OrderServiceStore');
+        rateText = '<div><div class="rate-image"></div><div class="rate-div">'+orderServiceStore.data.items[0].data.price_per_hour+'</div></div>';
+        this.getRateCardText().setHtml(rateText);
     }
 });

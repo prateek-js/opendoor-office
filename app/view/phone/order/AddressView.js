@@ -3,6 +3,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddressView', {
 	requires:['TheOpenDoor.view.phone.order.AddressItem'],
     config: {
     	itemId: 'addressView',
+        id: "OpenDoorAddressView",
     	defaultType: 'AddressItem',
         store: 'AddressGetStore',
         scrollable: null,

@@ -54,6 +54,7 @@ Ext.define('TheOpenDoor.controller.OrderStartController',{
         this.getDateTimeBO().doGetDateTime(serviceId,successCb, failureCb);
 	},
 	handleDateTimeViewBackButtonTap: function(){
+        window.pageCount = 0;
         Ext.getCmp('datePickerCreate').destroy();
         Ext.getCmp('timePickerCreate').destroy();
 		this.getBaseNavigationView().onNavBack();
@@ -72,7 +73,6 @@ Ext.define('TheOpenDoor.controller.OrderStartController',{
             successCb = this.handleGetAddressSucess,
             failureCb = this.handleGetAddressFailure;
             this.getAddressBO().doGetAddress(successCb, failureCb); 
-                        
         }
         else{
             alert("Pls select date and time");
@@ -80,6 +80,7 @@ Ext.define('TheOpenDoor.controller.OrderStartController',{
         
     },
     handleGetAddressSucess: function(){
+        window.pageCount = 2;
         this.getBaseNavigationView().pushtoNavigationView('AddressOrderService');     
         TheOpenDoor.app.getController('AddEditAddressController').handleAddressOrderServiceInit();
         hideSpinner();

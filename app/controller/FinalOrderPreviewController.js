@@ -35,6 +35,7 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 	},
 
 	handleFinalOrderBackButton: function(){
+		window.pageCount = 2;
 		this.getBaseNavigationView().onNavBack();
 	},
 	handleFinalOrderPreviewInit: function(){
@@ -71,6 +72,11 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 	},
 	handleOrderPlaceBtnTap: function(){
 		showSpinner("Loading");
+		if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
 		Ext.Ajax.request({
             url: UrlHelper.getServerUrl().submitOrder,
             method: 'POST',          

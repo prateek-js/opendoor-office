@@ -9,6 +9,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
             pack : 'start'
         },
         cls: 'add-edit-address-view',
+        id: "OpenDoorAddEditAddress",
         items:[{
             xtype: 'headerPanel',
             width: '100%',

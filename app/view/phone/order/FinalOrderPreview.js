@@ -3,6 +3,7 @@ Ext.define('TheOpenDoor.view.phone.order.FinalOrderPreview', {
     //requires:[''],
     config: {
         itemId: 'finalOrderPreview',
+        id: "OpenDoorFinalOrderPreview",
         cls : ['final-order-preview'],
         items : [{
             xtype: 'headerPanel',

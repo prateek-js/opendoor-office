@@ -96,7 +96,50 @@ Ext.define('TheOpenDoor.controller.BaseController',{
      * @param storeId
      */
     onAndroidBackClick:function(){
-        //document.addEventListener("backbutton", onNativeBackKeyDown, false);
+        var activeView = Ext.Viewport.getActiveItem().getItemId();
+        if(activeView == "OpenDoorMainView" || activeView == "OpenDoorLoginView" || activeView == "OpenDoorDashboardView"){
+            Ext.Msg.confirm("Exit", "Are you sure you want to exit the app?",  function (answer) { 
+                if ( answer == 'yes') { 
+                    TheOpenDoor.app.getController('BaseController').appExit();
+                } else { 
+                    //do nothing
+                } 
+            });
+        }
+        else if(activeView == "slideNavigatorConfig"){
+            var activeSliderItem = Ext.Viewport.getActiveItem().list.getSelection()[0].data.titlename;
+            if(activeSliderItem == "OrderPage"){
+                Ext.Msg.confirm("Exit", "Are you sure you want to exit the app?",  function (answer) { 
+                    if ( answer == 'yes') { 
+                        TheOpenDoor.app.getController('BaseController').appExit();
+                    } else { 
+                        //do nothing
+                    } 
+                });
+            }
+            else if(activeSliderItem == "All Orders"){
+                TheOpenDoor.app.getController('AllOrderController').handleBookNowBtn();
+            }
+        }
+        else if(activeView == "OpenDoorMyNavView"){
+            if(window.pageCount == 1)
+                TheOpenDoor.app.getController('OrderStartController').handleDateTimeViewBackButtonTap();
+            else if(window.pageCount == 2)
+                TheOpenDoor.app.getController('AddEditAddressController').handleAddressBackButtonTap();
+            else if(window.pageCount == 3)
+                TheOpenDoor.app.getController('AddEditAddressController').handleEditAddressCancelButtonTap();
+            else if(window.pageCount == 4)
+                TheOpenDoor.app.getController('FinalOrderPreviewController').handleFinalOrderBackButton();
+        }
+        else if(activeView == "OpenDoorOrderDetail"){
+            TheOpenDoor.app.getController('OrderDetailController').handleOrderDetailBackBtnTap();
+        }
+    },
+    /**
+     * exit the App
+    */
+    appExit: function(){
+        navigator.app.exitApp();
     },
     /**
      * @method login

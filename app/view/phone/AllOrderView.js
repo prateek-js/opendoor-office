@@ -6,6 +6,7 @@ Ext.define('TheOpenDoor.view.phone.AllOrderView',{
 			type : 'vbox'
 		},
 		cls : ['view-all-orders'],
+		id: "OpenDoorAllOrderView",
 		items: [{
             xtype: 'list',
 			emptyText: '<div class="listEmptyMyBillsText">'+localeString.norecordsfound+'</div>',

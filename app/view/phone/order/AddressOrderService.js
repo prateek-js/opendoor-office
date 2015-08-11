@@ -8,6 +8,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddressOrderService', {
             pack : 'start'
         },
         itemId: 'addressServiceOrder',
+        id: "OpenDoorAddressServiceOrder",
         cls : ['address-service-order'],
         items : [{
             xtype: 'headerPanel',

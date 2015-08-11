@@ -55,9 +55,15 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
         profileData.email_id = this.getEmailProfileField().getValue();
         var dashboardStore = Ext.getStore('DashboardStore');
         dashboardStore.removeAll();
-        dashboardStore.addToStore(profileData);   
+        dashboardStore.addToStore(profileData);
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         Ext.Ajax.request({
-            url:  BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',
+            //url:  BaseUrl.baseUrl+'users/'+window.user_Id+'/profile',
+            url:  BaseUrl.baseUrl+'users/'+5+'/profile',
             method: 'PUT',          
             headers: {'Content-Type': 'text/json'},
             waitTitle: 'Connecting',

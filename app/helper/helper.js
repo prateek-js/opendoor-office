@@ -15,6 +15,7 @@ var isloggedIn = '';
 var serviceIdSelected = '';
 var orderStartTime = '';
 var userProfile = '';
+window.pageCount = 0;
 //window.user_Id = 5;
 /**
     * @method handleAuthResult
@@ -75,9 +76,15 @@ function showSpinner(msg) {
  * @returns {boolean} 
  */
 function isOnLine() {
-    if(Ext.device.Connection !== undefined)
-        return Ext.device.Connection.isOnline();   
-    else return navigator.onLine;       
+    //debugger;
+    if(navigator.network != undefined && navigator.network.connection != undefined){
+        var networkState = navigator.network.connection.type;
+        if(networkState === Connection.NONE) {
+            return false;
+        }
+        return true;
+    }
+    return true;         
 }
 
 /**

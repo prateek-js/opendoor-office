@@ -9,6 +9,7 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
             pack : 'center'
         },
         cls: 'login-view',
+        id: "OpenDoorLoginView",
         items:[{
             xtype: 'headerPanel',
             //flex: 1,

@@ -7,6 +7,7 @@ Ext.define('TheOpenDoor.view.phone.OrderDetail',{
             pack : 'stretch'
         },
 		cls : ['order-detail'],
+        id: "OpenDoorOrderDetail",
 		items: [{
             xtype: 'headerPanel',
             flex: 1,

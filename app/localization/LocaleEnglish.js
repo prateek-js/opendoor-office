@@ -44,5 +44,6 @@ Ext.define('TheOpenDoor.localization.LocaleEnglish', {
 	bookAgain: 'Book Again',
 	totalBill: 'Total Bill',
 	mailInvoice: 'Mail Invoice',
-	bookNow: 'Book Now'
+	bookNow: 'Book Now',
+	rateCard: 'Rate Card'
 });

@@ -27,6 +27,11 @@ Ext.define('TheOpenDoor.businessObject.GetAllOrderBO', {
 
 	doGetAllOrderAjaxRequest: function () {
     	/* Call Login API */
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url: BaseUrl.baseUrl+'orders?user_id='+window.user_Id,
             method:'GET',

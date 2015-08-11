@@ -10,6 +10,7 @@ Ext.define('TheOpenDoor.view.phone.order.OrderPageView', {
             pack : 'start'
         },
         cls: 'order-view',
+        id: "OpenDoorOrderPageView",
         items:[{
             xtype: 'container',
             layout : {

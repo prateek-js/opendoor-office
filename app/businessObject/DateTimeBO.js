@@ -30,6 +30,12 @@ Ext.define('TheOpenDoor.businessObject.DateTimeBO', {
 	},
 
 	doDateTimeAjaxRequest: function () {
+        // debugger;
+        if(!isOnLine()) {
+            hideSpinner();
+            AppMessage.showMessageBox(4,null,null,localeString.noInternetConnection);
+            return;
+        }
         this.doSendAjax({
             url: UrlHelper.getServerUrl().getSlots+this.serviceId+'/slots',
             //url: UrlHelper.getServerUrl().getSlots,

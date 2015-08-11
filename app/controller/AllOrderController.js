@@ -67,13 +67,13 @@ Ext.define('TheOpenDoor.controller.AllOrderController',{
         this.getOrderDetailBO().doGetOrderDetail(orderId,successCb, failureCb);
     },
     handleOrderDetailViewShow: function(){
-    	// var slideNavigator = this.getSlideNavigator();
-    	// if(slideNavigator){
-     //        Ext.Viewport.remove(slideNavigator, true);
-     //    }
-     //    this.addToViewPort({
-     //        xtype : 'OrderDetail'
-     //    },true);
+    	var slideNavigator = this.getSlideNavigator();
+    	if(slideNavigator){
+            Ext.Viewport.remove(slideNavigator, true);
+        }
+        this.addToViewPort({
+            xtype : 'OrderDetail'
+        },true);
     },
     handleBookNowBtn: function(){
         var slideNavigator = this.getSlideNavigator();
