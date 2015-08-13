@@ -19,12 +19,26 @@
 
 package com.prateek.MyMaidApp;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import android.annotation.SuppressLint;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
+import android.widget.Toast;
+
 import org.apache.cordova.*;
 
 public class TheOpenDoor extends CordovaActivity 
 {
-    @Override
+    private static final Log Log = null;
+
+	@SuppressLint("NewApi") @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -32,6 +46,19 @@ public class TheOpenDoor extends CordovaActivity
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html");
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.prateek.MyMaidApp",PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                String sign=Base64.encodeToString(md.digest(),Base64.DEFAULT);
+                Log.e("MY KEY HASH:", sign);
+                Toast.makeText(getApplicationContext(),sign,Toast.LENGTH_LONG).show();
+            }
+		} catch (NameNotFoundException e) {
+		} catch (NoSuchAlgorithmException e) {
+		}
     }
 }
+
 

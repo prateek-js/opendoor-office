@@ -12,5 +12,10 @@
 	  		@include text('label-light-font2-32','single');
 		}
 	}
+	.spacer-between-social{
+		border-bottom: 2px solid $color-border1;
+		height: 0.5rem;
+    	width: 90%;
+	}
 }
 

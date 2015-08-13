@@ -65,6 +65,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /></feature>",
                             "count": 1
                         },
@@ -87,10 +91,6 @@
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -99,11 +99,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<string name=\"fb_app_id\">$APP_ID</string>",
+                            "xml": "<string name=\"fb_app_id\">991073507583251</string>",
                             "count": 1
                         },
                         {
-                            "xml": "<string name=\"fb_app_name\">$APP_NAME</string>",
+                            "xml": "<string name=\"fb_app_name\">TheOpenDoor</string>",
                             "count": 1
                         }
                     ]
@@ -124,10 +124,10 @@
         "net.yoik.cordova.plugins.screenorientation": {
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         },
-        "com.phonegap.plugins.facebookconnect": {
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         },
-        "org.apache.cordova.network-information": {
+        "com.phonegap.plugins.facebookconnect": {
             "PACKAGE_NAME": "com.prateek.MyMaidApp"
         }
     },

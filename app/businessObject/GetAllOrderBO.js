@@ -34,6 +34,7 @@ Ext.define('TheOpenDoor.businessObject.GetAllOrderBO', {
         }
         this.doSendAjax({
             url: BaseUrl.baseUrl+'orders?user_id='+window.user_Id,
+            //url: BaseUrl.baseUrl+'orders?user_id='+5,
             method:'GET',
 			disableCaching: false ,
             jsonData: this.inputDetails,

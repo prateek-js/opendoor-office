@@ -34,6 +34,28 @@ module.exports = [
         "merges": [
             "cordova.plugins.screenorientation"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.network-information/www/network.js",
+        "id": "org.apache.cordova.network-information.network",
+        "clobbers": [
+            "navigator.connection",
+            "navigator.network.connection"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.network-information/www/Connection.js",
+        "id": "org.apache.cordova.network-information.Connection",
+        "clobbers": [
+            "Connection"
+        ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.facebookconnect/facebookConnectPlugin.js",
+        "id": "com.phonegap.plugins.facebookconnect.FacebookConnectPlugin",
+        "clobbers": [
+            "facebookConnectPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -42,7 +64,9 @@ module.exports.metadata =
     "nl.x-services.plugins.googleplus": "1.1.1",
     "org.apache.cordova.inappbrowser": "0.6.0",
     "org.apache.cordova.statusbar": "0.1.10",
-    "net.yoik.cordova.plugins.screenorientation": "1.3.2"
+    "net.yoik.cordova.plugins.screenorientation": "1.3.2",
+    "org.apache.cordova.network-information": "0.2.15",
+    "com.phonegap.plugins.facebookconnect": "0.11.0"
 }
 // BOTTOM OF METADATA
 });

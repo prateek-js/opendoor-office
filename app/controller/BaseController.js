@@ -134,6 +134,9 @@ Ext.define('TheOpenDoor.controller.BaseController',{
         else if(activeView == "OpenDoorOrderDetail"){
             TheOpenDoor.app.getController('OrderDetailController').handleOrderDetailBackBtnTap();
         }
+        else if(activeView == "OpenDoorProfileView"){
+            TheOpenDoor.app.getController('ProfileController').handleProfileHeaderBackTap();
+        }
     },
     /**
      * exit the App

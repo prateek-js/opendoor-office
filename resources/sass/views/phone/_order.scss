@@ -85,6 +85,8 @@
 	.order-time{
 		@include text('label-regular-font5-16','single');
 		margin-bottom: 0.8rem;
+		white-space: pre-wrap !important;
+  		word-wrap: break-word !important;
 	}
 	.order-value-label{
 		@include text('label-regular-font2-16','single');
@@ -231,6 +233,7 @@
 			}
 		}
 		.total-bill-container{
+			height: 4rem;
 			.total-bill{
 				.order-service{
 
@@ -240,7 +243,12 @@
 				}
 			}
 			.mail-invoice-button{
-				
+				background-color: $color-font2;
+			    border: none;
+			    border-radius: 0;
+			    .x-button-label{
+			    	@include text('label-regular-font-16','single');
+			    }
 			}
 		}
 

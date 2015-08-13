@@ -27,20 +27,20 @@ Ext.define('TheOpenDoor.controller.LoginController',{
     },
 
     init: function(application) {
-        // window.fbAsyncInit = function() {
-        //     FB.init({
-        //       appId      : 991073507583251,
-        //       xfbml      : true,
-        //       version    : 'v2.3'
-        //     });
-        // };
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : 991073507583251,
+              xfbml      : true,
+              version    : 'v2.3'
+            });
+        };
 
-        // (function(d, s, id){
-        //     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-        //     js = d.createElement('script'); js.id = id; js.async = true;
-        //     js.src = "http://connect.facebook.net/en_US/all.js";
-        //     d.getElementsByTagName('head')[0].appendChild(js);
-        // }(document));
+        (function(d, s, id){
+            var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "http://connect.facebook.net/en_US/all.js";
+            d.getElementsByTagName('head')[0].appendChild(js);
+        }(document));
 
 
     },
@@ -89,24 +89,26 @@ Ext.define('TheOpenDoor.controller.LoginController',{
     },
     handleFacebookSignIn: function(){
         showSpinner("Connecting to facebook...");
-        window.facebookConnectPlugin.login(["email","public_profile"], 
+        facebookConnectPlugin.login(["email"], 
             function(response){
                 if (response.authResponse) {
-                    facebookConnectPlugin.api('/me', null,
-                    function(response) {
-                        alert('Good to see you, ' +response.email + response.name + '.');
-                    });
+                    facebookConnectPlugin.api('/me', null,function(response){
+                        this.handleFbAuthResult(response);
+                    },function(error){hideSpinner();});
                 }
             },
-            function (error) { alert("" + error) }
+            function (error) { 
+                facebookConnectPlugin.login(["email"],function(response){
+                    if (response.authResponse) {
+                        facebookConnectPlugin.api('/me', null,function(response){
+                            this.handleFbAuthResult(response);
+                        },function(error){hideSpinner();});
+                    }
+                },function(response){console.log(JSON.stringify(response))});
+                hideSpinner(); 
+            }
         );
         //window.facebookConnectPlugin.api("/me?fields=id,email", ["user_birthday"],this.fbsuccess,function (error) {alert("Failed: " + error);});
-    },
-    fbsuccess : function(result){
-        userProfile = result;
-        var userFbEmail = userProfile.email;
-        alert(userProfile);
-        TheOpenDoor.app.getController('LoginController').handleSignInFbDataSend(userFbEmail);
     },
     handleLogoutYes: function() {
         showSpinner("Signing Out...");

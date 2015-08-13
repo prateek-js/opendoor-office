@@ -38,6 +38,15 @@ function userDetails(authResult){
     userGender = authResult.gender;
 }
 
+function handleFbAuthResult(authResult) {
+    this.userFbDetails(authResult);
+    TheOpenDoor.app.getController('TheOpenDoor.controller.LoginController').handleSignInFbDataSend(authResult);
+}
+
+function userFbDetails(authResult){
+    userName = authResult.name;
+    userEmail = authResult.email;
+}
 /**
  * @method showSpinner
  * show loading spinner

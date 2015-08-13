@@ -150,7 +150,7 @@ Ext.define('TheOpenDoor.view.phone.OrderDetail',{
             cls: 'cancel-order-button',
             itemId: 'submitFeedbackButton',
             text: localeString.bookAgain,
-            hidden: false,
+            hidden: true,
             docked: 'bottom'
         }]
 	}

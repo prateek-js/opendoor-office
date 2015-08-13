@@ -241,6 +241,22 @@
           <string>com.prateek.MyMaidApp</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb$APP_ID</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb$APP_ID</string>
+        </array>
+      </dict>
     </array>
+    <key>FacebookAppID</key>
+    <string>$APP_ID</string>
+    <key>FacebookDisplayName</key>
+    <string>$APP_NAME</string>
   </dict>
 </plist>
