@@ -7,6 +7,7 @@ Ext.define('TheOpenDoor.view.phone.order.AddressItem',{
             align: 'start'
         },
         btnRef:'',
+        clickedId: '',
         itemId:'addressItemCnt',
         id: "OpenDoorAddressItemCnt",
         cls: 'data-item-container',
@@ -15,7 +16,17 @@ Ext.define('TheOpenDoor.view.phone.order.AddressItem',{
             itemId: 'addressItem',
             cls: 'full-address-container',
             tpl: '<div class="full-address-div"><div class="address-name">{name}</div><div class="address-line">{line1}</div><div class="address-cps">{address_line2}</div><div class="address-cps">{address_cps}</div><div class="address-country">{phone_number}</div></div>',
-            flex: 0.5
+            flex: 0.5,
+            listeners:[{
+                element: 'element',
+                event: 'tap',
+                fn: function(ElementObj, e) {
+                    var me = this;
+                    var id = me.getParent().getRecord().data.id;
+                    addressView = me.getParent().up('#addressView').down('#addressItemCnt');
+                    addressView.setClickedId(id);                
+                }
+            }]
         },{
         	xtype: 'container',
         	layout:{
@@ -73,9 +84,20 @@ Ext.define('TheOpenDoor.view.phone.order.AddressItem',{
                         addressView.setBtnRef('edit');
                     }
                 }]
+            }],
+            listeners:[{
+                element: 'element',
+                event: 'tap',
+                fn: function(ElementObj, e) {
+                    var me = this;
+                    var id = me.getParent().getRecord().data.id;
+                    addressView = me.getParent().up('#addressView').down('#addressItemCnt');
+                    addressView.setClickedId(id);
+                }
             }]
 	    }]
     },
+    
     updateRecord: function(record) {
         var me = this;
         if(!record)

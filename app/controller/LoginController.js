@@ -118,12 +118,10 @@ Ext.define('TheOpenDoor.controller.LoginController',{
             }
         );
         this.disconnect();
+        facebookConnectPlugin.logout(function(response){},function(error){});
         this.isloggedIn = false;
         localStorage.removeItem('loggedInFlag');
         localStorage.setItem('loggedInFlag', this.isloggedIn);
-        user_Id = null;
-        localStorage.removeItem('user_Id');
-        localStorage.setItem('user_Id', user_Id);
         var slideNavigator = this.getSlideNavigator();
         if(slideNavigator){
             Ext.Viewport.remove(slideNavigator, true);
@@ -131,6 +129,7 @@ Ext.define('TheOpenDoor.controller.LoginController',{
         this.addToViewPort({
             xtype : 'LoginView'
         },true);
+        this.cleaningUpStore();
         hideSpinner();
     },
 

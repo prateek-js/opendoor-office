@@ -126,10 +126,17 @@
 			@include text('label-regular-font2-16','single');
 			margin-top: 0.3rem;
     		margin-bottom: 1.5rem;
+    		white-space: pre-line !important;
+    		word-wrap: break-word !important;
 		}
 		.maid-reach-label{
 			@include text('label-regular-font-16','single');
 			margin-bottom: 0.5rem;
+			.x-innerhtml{
+				text-overflow: ellipsis;
+    			word-wrap: break-word;
+   				white-space: pre-line;
+			}
 		}
 		.address-label{
 			@include text('label-regular-font2-16','single');
@@ -137,7 +144,7 @@
 			.x-innerhtml{
 				text-overflow: ellipsis;
     			word-wrap: break-word;
-   				white-space: pre;
+   				white-space: pre-line;
 			}
 		}
 		.landmark-label{
@@ -146,7 +153,7 @@
 			.x-innerhtml{
 				text-overflow: ellipsis;
     			word-wrap: break-word;
-   				white-space: pre;
+   				white-space: pre-line;
 			}
 		}
 		.pincode-label{
@@ -155,7 +162,7 @@
 			.x-innerhtml{
 				text-overflow: ellipsis;
     			word-wrap: break-word;
-   				white-space: pre;
+   				white-space: pre-line;
 			}
 		}
 		.mobile-label{
@@ -164,7 +171,7 @@
 			.x-innerhtml{
 				text-overflow: ellipsis;
     			word-wrap: break-word;
-   				white-space: pre;
+   				white-space: pre-line;
 			}
 		}
 		.time-label{
@@ -172,7 +179,7 @@
 			.x-innerhtml{
 				text-overflow: ellipsis;
     			word-wrap: break-word;
-   				white-space: pre;
+   				white-space: pre-line;
 			}
 		}
 		.order-time-label{

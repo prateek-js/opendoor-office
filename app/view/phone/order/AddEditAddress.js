@@ -31,6 +31,10 @@ Ext.define('TheOpenDoor.view.phone.order.AddEditAddress', {
             },
             flex: 9,
             cls: 'dashboard-view-container',
+            scrollable: {
+                direction: 'vertical',
+                directionLock: true
+            },
             items:[{
                 xtype: 'label',
                 itemId : 'addEditAddressLabel',

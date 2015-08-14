@@ -80,7 +80,6 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
     applyDeleteAddressBO: function(boName){
         return Ext.create(boName, this);
     },
-
     handleAddressOrderServiceInit: function(){
         var count = Ext.getStore('AddressGetStore').getCount();
         if(count == 0){
@@ -108,13 +107,14 @@ Ext.define('TheOpenDoor.controller.AddEditAddressController',{
         window.pageCount = 2;
         this.getBaseNavigationView().onNavBack();
     },
-    addressViewDataItemTap:function(dataview,index,dataitem){
+    addressViewDataItemTap: function(dataview,index,dataitem){
         btnRef = this.getAddressView().down('#addressItemCnt').getBtnRef();
-        clickedAddressId = dataitem.getRecord().getData().id;
+        clickedAddressId = this.getAddressView().down('#addressItemCnt').getClickedId();
         if(btnRef=="edit"){
             //open edit and add address field
             window.pageCount = 3;
-            addressToEdit = dataitem.getRecord().getData();
+            var record = Ext.getStore('AddressGetStore').findRecord('id',clickedAddressId);
+            addressToEdit = record.data;
             this.getBaseNavigationView().pushtoNavigationView('AddEditAddress');
             this.getAddEditAddressLabel().setHtml("Edit Address");
             this.getAddressView().down('#addressItemCnt').setBtnRef("");          

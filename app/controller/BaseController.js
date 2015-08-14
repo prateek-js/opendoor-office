@@ -142,6 +142,7 @@ Ext.define('TheOpenDoor.controller.BaseController',{
      * exit the App
     */
     appExit: function(){
+        this.cleaningUpStore();
         navigator.app.exitApp();
     },
     /**
@@ -167,7 +168,14 @@ Ext.define('TheOpenDoor.controller.BaseController',{
      */
     cleaningUpStore:function()
     {
-        var stores=[
+        var stores=['DashboardStore',
+            'OrderServiceStore',
+            'CreateUserStore',
+            'GetSlotsStore',
+            'TimeStore',
+            'AddressGetStore',
+            'GetAllOrderStore',
+            'OrderDetailStore'
         ];
         Ext.Array.each(stores,function(key,value,dataSelf){
                 var store = Ext.getStore(key);

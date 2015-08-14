@@ -69,6 +69,7 @@ Ext.define('TheOpenDoor.controller.OrderStartController',{
 	},
     handleDateTimeViewNextButtonTap: function(){
         if(this.getDatePickerId().getValue()!= "" && this.getTimePickerId().getValue()!= ""){
+            showSpinner(localeString.loading);
             var me = this;
             successCb = this.handleGetAddressSucess,
             failureCb = this.handleGetAddressFailure;

@@ -166,7 +166,7 @@
 			    margin-top: 0.3rem;
 			}
 			.name-textfield{
-				width: 90%;
+				width: 85%;
 				.x-field-input{
 	  				border-radius: 0;
 	  				border: none;
@@ -181,13 +181,13 @@
 			}
 		}
 		.other-textfield{
-			width: 90%;
-			margin-left: 10%;
+			width: 100%;
+    		padding-left: 2.5rem;
 			margin-top: 0.5rem;
-			border-bottom: 1px solid $color-border1 !important;
 			.x-field-input{
 	  			border-radius: 0;
 	  			border: none;
+	  			border-bottom: 1px solid #eaeaea !important;
 			}
 			.x-input-el{
 				border: none;

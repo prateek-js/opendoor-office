@@ -39,14 +39,14 @@ Ext.define('TheOpenDoor.controller.FinalOrderPreviewController',{
 		this.getBaseNavigationView().onNavBack();
 	},
 	handleFinalOrderPreviewInit: function(){
-		var namefield = '<div>Dear ' +localStorage.getItem('userName')+ '</div>';
-		this.getUserNameLabel().setHtml(namefield);
 		var serviceSelected = serviceIdSelected;
 		var addressSelected = TheOpenDoor.app.getController('TheOpenDoor.controller.AddEditAddressController').addressIdSelected;
 		var timeSlotSelected = orderStartTime;
 		
 		var recordAddress = Ext.getStore('AddressGetStore').findRecord('id',addressSelected);
 		var recordService = Ext.getStore('OrderServiceStore').findRecord('service_id',serviceSelected);
+		var namefield = '<div>Dear ' +recordAddress.data.name+ '</div>';
+		this.getUserNameLabel().setHtml(namefield);
 		var addressLine = recordAddress.data.line1 +' '+ recordAddress.data.line2;
 		var landmarkCity = recordAddress.data.landmark +' '+ recordAddress.data.city;
 		var pincode = recordAddress.data.pincode;

@@ -68,10 +68,6 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
                     pack: 'start'
                 },
                 items: [{
-                    xtype: 'label',
-                    html: localeString.connectWith,
-                    cls: 'login-via-google-label'
-                },{
                     xtype: 'image',
                     src: 'resources/images/fb.png',
                     cls: 'login-via-google-image'
